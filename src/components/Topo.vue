@@ -8,10 +8,7 @@
                     </RouterLink>
 
                 </div>
-                            <!-- <RouterLink to="/quadras">Quadras</RouterLink> -->
-
                 <div class="col-2"></div>
-
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -27,6 +24,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="d-block d-sm-none">
                         <ul class="navbar-nav">
+                            <RouterLink to="/quadras">Quadras</RouterLink>
                             <a>Usuário</a>
                             <a>Cadastre Quadras</a>
                             <a>Configurações</a>
@@ -71,9 +69,9 @@
                                 aria-expanded="false"
                             >
                                 <i class="bi bi-list" style="font-size: 1.5em"></i>
-                                <!-- <span class="navbar-toggler-icon"></span> -->
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <RouterLink class="dropdown-item" to="/quadras">Quadras</RouterLink>
                                 <a class="dropdown-item" href="#">Usuário</a>
                                 <a class="dropdown-item" href="#">Cadastre Quadras</a>
                                 <a class="dropdown-item" href="#">Configurações</a>
