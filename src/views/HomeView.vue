@@ -26,13 +26,10 @@ const store = useQuadrasStore()
 
 export default {
   components: { Banner, QuadraCard },
-  data() {
-    return {
-      quadras: []
+  computed: {
+    quadras () {
+      return store.quadras
     }
-  },
-  mounted() {
-    this.quadras = store.quadras;
   }
 }
 </script>
