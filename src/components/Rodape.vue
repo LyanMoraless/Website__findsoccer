@@ -11,15 +11,15 @@
                 </div>
 
                 <div class="col-6">
-                    <section>
+                    <section class="direitos">
                         Todos os direitos reservados - FindSoccer
                     </section>
                 </div>
 
                 <div class="col-3">
-                    <img src="src/assets/img/Rodape/whats.svg">
-                    <img src="src/assets/img/Rodape/instagram.svg">
-                    <img src="src/assets/img/Rodape/face.svg">
+                    <img class="images" src="src/assets/img/Rodape/whats.svg">
+                    <img class="images" src="src/assets/img/Rodape/instagram.svg">
+                    <img class="images" src="src/assets/img/Rodape/face.svg">
                 </div>
 
             </div>

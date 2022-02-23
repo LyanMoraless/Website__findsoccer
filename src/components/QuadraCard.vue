@@ -9,7 +9,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 Avaliação
-                <star-rating read-only :rating="quadra.avaliacao.nota" :increment="0.01" :star-size="20" />
+                <star-rating read-only :rating="5" :increment="0.01" :star-size="20" />
             </li>
             <li class="list-group-item">Comentários</li>
             <li class="list-group-item">Horário de funcionamento</li>

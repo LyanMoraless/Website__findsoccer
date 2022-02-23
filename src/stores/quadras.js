@@ -8,7 +8,7 @@ export const useQuadrasStore = defineStore('quadras', {
           "id": 1,
           "foto": {
             "id": 1,
-            "url": "https://via.placeholder.com/1024x768/00ff00" //COLOCAR IMAGEM DA QUADRA
+            "url": "/img/QuadraCards/quadra.jpg" //COLOCAR IMAGEM DA QUADRA
           },
           "fotos": [
             {

@@ -3,18 +3,26 @@
 header{
     background-image: url(@/assets/img/Topo/bg-topo.jpg);
 }
+footer{
+    background-image: url(@/assets/img/Topo/bg-topo.jpg);
+}
+
 .menus{
     background-color: transparent;
-    color: #1FD86F;
+    color: white;
     border-color: white;
 }
 .butt{
     background-color: transparent;
-    color: white;
+    color: #1FD86F;
     border-color:#1FD86F ;
 }
 .buttonmenu{
     color:#1FD86F;
+}
+
+.principal{
+    padding: 50px;
 }
 
 .bannerImages{
@@ -23,4 +31,16 @@ header{
 
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
+}
+
+.direitos{
+    color: #1FD86F;
+}
+
+.rodape{
+    height: 55px;
+}
+
+.images{
+    height: 40px;
 }

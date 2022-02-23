@@ -8,13 +8,15 @@
         <hr />
       </h2>
 
-      <div class="row align-items-stretch">
+      <div class="row align-items-stretch maisAcessadas">
         <div class="col-3 d-flex align-items-stretch" v-for="quadra in quadras" :key="quadra.id">
           <QuadraCard :quadra="quadra" />
         </div>
       </div>
     </div>
   </section>
+
+  
 
 </template>
 
