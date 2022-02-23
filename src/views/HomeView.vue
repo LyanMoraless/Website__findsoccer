@@ -15,19 +15,21 @@
       </div>
     </div>
   </section>
+
 </template>
 
 <script>
 import Banner from "../components/Banner.vue";
 import QuadraCard from "../components/QuadraCard.vue";
 import { useQuadrasStore } from "../stores/quadras";
+import Rodape from "../components/Rodape.vue";
 
 const store = useQuadrasStore()
 
 export default {
-  components: { Banner, QuadraCard },
+  components: { Banner, QuadraCard, Rodape },
   computed: {
-    quadras () {
+    quadras() {
       return store.quadras
     }
   }

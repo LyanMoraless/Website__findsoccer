@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="col-2">
                     <RouterLink class="navbar-brand logo" to="/">
-                        <img src="@/assets/img/logo.svg" />
+                        <img src="@/assets/img/Topo/logo.svg" />
                     </RouterLink>
 
                 </div>

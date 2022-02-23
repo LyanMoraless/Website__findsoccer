@@ -1,5 +1,7 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
 header{
-    background-image: url(../img/bg-topo.jpg);
+    background-image: url(@/assets/img/Topo/bg-topo.jpg);
 }
 .menus{
     background-color: transparent;

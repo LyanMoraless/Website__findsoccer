@@ -17,9 +17,9 @@
                 </div>
 
                 <div class="col-3">
-                    <img src="img/instagram.svg">
-                    <img src="img/face.svg">
-                    <img src="img/whats.svg">
+                    <img src="src/assets/img/Rodape/whats.svg">
+                    <img src="src/assets/img/Rodape/instagram.svg">
+                    <img src="src/assets/img/Rodape/face.svg">
                 </div>
 
             </div>
