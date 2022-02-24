@@ -5,43 +5,28 @@
       <hr />
     </h2>
 
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img :src="quadra.foto.url" class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p
-              class="card-text"
-            >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="quadraEspecial">
+      <QuadraDetails />
     </div>
+
   </div>
 </template>
 
 <script>
 
-import Banner from "../components/Banner.vue";
-import Rodape from "../components/Rodape.vue";
+import QuadraDetailsVue from "../components/QuadraDetails.vue";
 import { useQuadrasStore } from "../stores/quadras";
+import QuadraDetails from "../components/QuadraDetails.vue";
 
 const store = useQuadrasStore();
 
 export default {
-
-  components: { Banner, Rodape, Quadra },
+  components: { QuadraDetailsVue, QuadraDetails },
   computed: {
-        quadras() {
-            return store.quadras
-        }
+    quadras() {
+      return store.quadras
     }
+  }
 }
 </script>
 
