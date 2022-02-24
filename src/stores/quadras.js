@@ -280,7 +280,84 @@ export const useQuadrasStore = defineStore('quadras', {
             "preco2": "R$:120,00/1hora"
           }
 
-        }
+        },
+
+        // {
+        //   "id": 5,  
+        //   "foto": {
+        //     "id": 1,
+        //     "url": "/img/QuadraCards/quadra4.jpg"
+        //   },
+        //   "fotos": [
+        //     {
+        //       "id": 1,
+        //       "url": "img/quadras/05/1.jpg"
+        //     },
+        //     {
+        //       "id": 2,
+        //       "url": "img/quadras/05/2.jpg"
+        //     },
+        //     {
+        //       "id": 3,
+        //       "url": "img/quadras/05/3.jpg"
+        //     }
+        //   ],
+        //   "nome": "GlyIux",
+        //   "descricao": "Não existe quaisquer descrições, de um algo desacreditado faz-se milagres! Venha conferir a quadra GlyIux",
+        //   "endereco": {
+        //     "rua": "Nações Unidas",
+        //     "quadra": 12,
+        //     "numero": 207,
+        //     "bairro": "Santos Dumont"
+        //   },
+        //   // "avaliacao": {
+        //   //   "nota": 5,
+        //   //   "comentarios": [
+        //   //     {
+        //   //       "usuario": {
+        //   //         "id": 1,
+        //   //         "nome": "ApaixonadosPorGolfinhos"
+        //   //       },
+        //   //       "comentario": "Foi mágico, não se explica o que ocorre lá! É único, magnífico",
+        //   //       "nota": 5
+        //   //     },
+        //   //     {
+        //   //       "usuario": {
+        //   //         "id": 2,
+        //   //         "nome": "Sérgio"
+        //   //       },
+        //   //       "comentario": "Perdi para um time de golfinhos! Eles são realmente bons",
+        //   //       "nota": 3
+        //   //     },
+        //   //     {
+        //   //       "usuario": {
+        //   //         "id": 3,
+        //   //         "nome": "Luiz"
+        //   //       },
+        //   //       "comentario": "Quase me afoguei com aquele golfinho me driblando",
+        //   //       "nota": 2
+        //   //     }
+        //   //   ]
+        //   // },
+        //   "horarios": [
+        //     {
+        //       "diaSemana": "seg",
+        //       "inicio": "06:00",
+        //       "fim": "22:00"
+        //     },
+        //     {
+        //       "diaSemana": "ter",
+        //       "inicio": "06:00",
+        //       "fim": "22:00"
+        //     }
+        //   ],
+        //   "preco": {
+        //     //"preco1": "R$:20,00/30min",
+        //     "preco2": "R$:82,35/1hora"
+        //   }
+
+        // }
+
       ]
     }
   }
