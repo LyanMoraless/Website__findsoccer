@@ -1,7 +1,7 @@
 <template>
   <Banner />
 
-  <section class="principal">
+  <section class="principal alinhamento">
     <div class="container">
       <h2>
         Mais acessadas
@@ -15,9 +15,6 @@
       </div>
     </div>
   </section>
-
-  
-
 </template>
 
 <script>
@@ -25,6 +22,7 @@ import Banner from "../components/Banner.vue";
 import QuadraCard from "../components/QuadraCard.vue";
 import { useQuadrasStore } from "../stores/quadras";
 import Rodape from "../components/Rodape.vue";
+
 
 const store = useQuadrasStore()
 

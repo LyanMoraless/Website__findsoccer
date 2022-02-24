@@ -1,8 +1,8 @@
 <template>
     <div class="card">
-        <img src="https://via.placeholder.com/1920x640/0f9/fff" class="card-img-top" alt="..." />
+        <img :src="quadra.foto.url" class="card-img-top mostAcessed" alt="..." />
         <div class="card-body">
-            <h5 class="card-title">{{ quadra.nome }}</h5>
+            <h5 class="card-title direitos2">{{ quadra.nome }}</h5>
             <p class="card-text">{{ quadra.descricao }}</p>
         </div>
 
@@ -11,7 +11,7 @@
                 Avaliação
                 <star-rating read-only :rating="5" :increment="0.01" :star-size="20" />
             </li>
-            <li class="list-group-item">Comentários</li>
+            <li class="list-group-item">Comentários (13)</li>
             <li class="list-group-item">Horário de funcionamento</li>
         </ul>
 
@@ -21,6 +21,7 @@
             </i>
         </div>
     </div>
+
 </template>
 
 <script>

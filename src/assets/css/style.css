@@ -33,14 +33,53 @@ footer{
     color: #fff;
 }
 
-.direitos{
+.direitos2{
     color: #1FD86F;
 }
 
+.direitos{
+    color: #1FD86F;
+    padding-top: 10px;
+    padding-left: 130px;
+}
+
+.politic{
+    text-decoration: none;
+    padding-top: 9px;
+}
+
 .rodape{
-    height: 55px;
+    height: 60px;
+    padding-top: 10px;
 }
 
 .images{
     height: 40px;
+}
+
+.mostAcessed{
+    height: 170px;
+}
+
+.mostAcessed2{
+    height: 170px;
+    width: 300px;
+    box-shadow: 5px 10px 20px 0px  #1FD86F;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+
+.cards{
+    text-decoration: none;
+    color: #1FD86F;
+}
+
+.cards2{
+    color: black;
+}
+
+.quadrasPadding{
+    padding-top: 50px;
+    padding-bottom: 50px;
 }

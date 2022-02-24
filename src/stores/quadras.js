@@ -75,7 +75,7 @@ export const useQuadrasStore = defineStore('quadras', {
           "id": 2,
           "foto": {
             "id": 1,
-            "url": "https://via.placeholder.com/1024x768/0000ff"
+            "url": "/img/QuadraCards/quadra1.jpg"
           },
           "fotos": [
             {
@@ -142,7 +142,7 @@ export const useQuadrasStore = defineStore('quadras', {
           "id": 3,
           "foto": {
             "id": 1,
-            "url": "https://via.placeholder.com/1024x768"
+            "url": "/img/QuadraCards/quadra2.jpg"
           },
           "fotos": [
             {
@@ -210,7 +210,7 @@ export const useQuadrasStore = defineStore('quadras', {
           "id": 4,
           "foto": {
             "id": 1,
-            "url": "https://via.placeholder.com/1024x768/ff0000"
+            "url": "/img/QuadraCards/quadra3.jpg"
           },
           "fotos": [
             {
@@ -276,7 +276,7 @@ export const useQuadrasStore = defineStore('quadras', {
             }
           ],
           "preco": {
-            "preco1": "R$:20,00/30min",
+            //"preco1": "R$:20,00/30min",
             "preco2": "R$:120,00/1hora"
           }
 
