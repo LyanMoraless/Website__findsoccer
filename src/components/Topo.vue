@@ -25,7 +25,7 @@
                         <ul class="navbar-nav">
                             <RouterLink to="/quadras">Quadras</RouterLink>
                             <a>Usuário</a>
-                            <RouterLink to="/quadrasCadastro">Cadastre Quadras</RouterLink>
+                            <RouterLink to="/quadras/new">Cadastre Quadras</RouterLink>
                             <a>Configurações</a>
                             <a>Sair</a>
                         </ul>
@@ -52,7 +52,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <RouterLink class="dropdown-item" to="/quadras">Quadras</RouterLink>
                                 <a class="dropdown-item" href="#">Usuário</a>
-                                <a class="dropdown-item" href="#">Cadastre Quadras</a>
+                                <RouterLink class="dropdown-item" to="/quadras/new">Cadastre Quadras</RouterLink>
                                 <a class="dropdown-item" href="#">Configurações</a>
                                 <a class="dropdown-item" href="#">Sair</a>
                             </div>
