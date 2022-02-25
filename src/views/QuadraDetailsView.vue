@@ -1,6 +1,6 @@
 <template>
   <div class="container quadrasPadding">
-    <h2>
+    <h2 class="marginTitle">
       Detalhes da Quadra
       <hr />
     </h2>

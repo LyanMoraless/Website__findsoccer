@@ -6,7 +6,6 @@
                     <RouterLink class="navbar-brand logo" to="/">
                         <img src="@/assets/img/Topo/logo.svg" />
                     </RouterLink>
-
                 </div>
                 <div class="col-2"></div>
                 <button
@@ -26,7 +25,7 @@
                         <ul class="navbar-nav">
                             <RouterLink to="/quadras">Quadras</RouterLink>
                             <a>Usuário</a>
-                            <a>Cadastre Quadras</a>
+                            <RouterLink to="/quadrasCadastro">Cadastre Quadras</RouterLink>
                             <a>Configurações</a>
                             <a>Sair</a>
                         </ul>
@@ -34,7 +33,7 @@
                 </div>
 
                 <div class="col-6">
-                   <FormPesquisa />
+                    <FormPesquisa />
                 </div>
 
                 <div class="col-2">

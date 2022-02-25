@@ -17,6 +17,11 @@ const router = createRouter({
       path: '/quadras/:id',
       name: 'quadraDetails',
       component: () => import('../views/QuadraDetailsView.vue')
+    },
+    {
+      path: '/quadrasCadastro',
+      name: 'quadrasCadastro',
+      component: () => import('../views/CadastreQuadrasView.vue')
     }
   ]
 })

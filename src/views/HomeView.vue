@@ -3,7 +3,7 @@
 
   <section class="principal alinhamento">
     <div class="container">
-      <h2>
+      <h2 class="marginTitle">
         Mais acessadas
         <hr />
       </h2>
