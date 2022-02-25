@@ -15,9 +15,9 @@
                 
                     
                         <div class="col-3 paddingImg">
-                                <img class="images" src="src/assets/img/Rodape/whats.svg" />      
-                                <img class="images" src="src/assets/img/Rodape/instagram.svg" />     
-                                <img class="images" src="src/assets/img/Rodape/face.svg" /> 
+                                <img class="images" src="@/assets/img/Rodape/whats.svg" />      
+                                <img class="images" src="@/assets/img/Rodape/instagram.svg" />     
+                                <img class="images" src="@/assets/img/Rodape/face.svg" /> 
                         </div>
                     
                 
