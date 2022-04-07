@@ -1,20 +1,22 @@
 <template>
     <footer class="rodape">
         <div class="container">
+
             <div class="row">
-                <div class="col-3">
-                    <div class="politic">
-                        <a href="#" style="color:#1FD86F">Políticas</a>
-                    </div>
+
+                <div class="col-3 politic">
+                        <a class="politic" href="#">Políticas</a>
                 </div>
 
                 <div class="col-6">
+
                     <section class="direitos">Todos os direitos reservados - FindSoccer</section>
+
                 </div>
 
                 
                     
-                        <div class="col-3 paddingImg">
+                        <div class="col-3">
                                 <img class="images" src="@/assets/img/Rodape/whats.svg" />      
                                 <img class="images" src="@/assets/img/Rodape/instagram.svg" />     
                                 <img class="images" src="@/assets/img/Rodape/face.svg" /> 
@@ -33,4 +35,16 @@ export default {
 </script>
 
 <style>
+
+.images{
+    height: 40px;
+    width: 40px;
+    margin: 0px 10px;
+}
+.politic{
+    color: #1FD86F; 
+    text-decoration: none;
+    padding-top: 9px;
+}
+
 </style>

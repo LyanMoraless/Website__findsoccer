@@ -25,10 +25,6 @@ footer{
     padding: 50px;
 }
 
-.bannerImages{
-    height: 500px;
-}
-
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
 }
@@ -43,18 +39,9 @@ footer{
     padding-left: 130px;
 }
 
-.politic{
-    text-decoration: none;
-    padding-top: 9px;
-}
-
 .rodape{
     height: 60px;
     padding-top: 10px;
-}
-
-.images{
-    height: 40px;
 }
 
 .mostAcessed{
