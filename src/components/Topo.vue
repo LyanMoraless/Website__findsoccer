@@ -51,7 +51,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <RouterLink class="dropdown-item" to="/quadras">Quadras</RouterLink>
-                                <a class="dropdown-item" href="#">Usuário</a>
+                                <RouterLink class="dropdown-item" to="/user">Usuário</RouterLink>
                                 <RouterLink class="dropdown-item" to="/quadras/new">Cadastre Quadras</RouterLink>
                                 <a class="dropdown-item" href="#">Configurações</a>
                                 <a class="dropdown-item" href="#">Sair</a>

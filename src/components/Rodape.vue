@@ -5,7 +5,7 @@
             <div class="row">
 
                 <div class="col-3 politic">
-                        <a class="politic" href="#">Políticas</a>
+                        <RouterLink class="politic" to="/politic">Politicas</RouterLink>
                 </div>
 
                 <div class="col-6">

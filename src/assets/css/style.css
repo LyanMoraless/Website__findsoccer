@@ -21,10 +21,6 @@ footer{
     color:#1FD86F;
 }
 
-.principal{
-    padding: 50px;
-}
-
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
 }
@@ -66,11 +62,3 @@ footer{
     color: black;
 }
 
-.quadrasPadding{
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.marginTitle{
-    margin: 60px;
-}

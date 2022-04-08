@@ -5,11 +5,20 @@ import Rodape from './components/Rodape.vue';
 </script>
 
 <template>
+  
   <Topo />
-  <main class="conteudo">
-    <RouterView />
-  </main>
+
+      <main class="conteudo">
+
+        <RouterView />
+
+      </main>
+  
+
+   
+
   <Rodape />
+
 </template>
 
 <style>

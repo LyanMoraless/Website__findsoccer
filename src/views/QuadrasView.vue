@@ -1,15 +1,15 @@
 <template>
-    <div class="container quadrasPadding">
-        <h2 class="marginTitle">
-            Quadras
-            <hr />
-        </h2>
 
-        <div>
-            <div>
-                <QuadraLista v-for="quadra in quadras" :key="quadra.id" :quadra="quadra" />
-            </div>
-        </div>
+    <h2 class="marginTitleQd1">
+        Quadras - Bauru/Sp
+        <hr />
+    </h2>
+
+    <div class="container quadrasPadding">
+
+         <QuadraLista v-for="quadra in quadras" :key="quadra.id" :quadra="quadra" id="quadrasStyle"/>
+         <QuadraLista v-for="quadra in quadras" :key="quadra.id" :quadra="quadra" id="quadrasStyle"/>
+
     </div>
 </template>
 
@@ -30,4 +30,17 @@ export default {
 </script>
 
 <style>
+
+.marginTitleQd1{
+    font-style: italic;
+    margin: 80px 150px;
+}
+.quadrasPadding{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#quadrasStyle{
+    margin-top: 50px;
+}
+
 </style>

@@ -91,7 +91,7 @@
         <input type="text" class="form-control" placeholder="Preço por hora: XXX,xx">
     </div>
     
-    <label for="" class="labelStyle">Número</label>
+    <label for="" class="labelStyle">Abertura</label>
     <label for="" class="labelStyle5">Descrição</label>
 
     <div class="input-group mb-3">
