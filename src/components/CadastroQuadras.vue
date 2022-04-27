@@ -7,15 +7,19 @@
     <h2 class="name">FindNames</h2>
     <hr class="geralPad">
 
-     <div class="mb-3">
-            <label for="nameQuadra" class="labelStyle">Nome da Quadra</label>
-            <input type="text" class="form-control inputStyle" placeholder="Digite o nome da quadra">
+    <div class="row g-3">
+        <div class="col-md-12">
+            <label for="nameQuadra" class="form-label">Nome da Quadra</label>
+            <input type="text" class="form-control" placeholder="Digite o nome da quadra">
         </div>
 
-        <div class="mb-3">
-            <label for="nameQuadra" class="labelStyle">Username da Quadra</label>
+        <div class="col-md-12">
+            <label for="nameQuadra" class="form-label">Username da Quadra</label>
             <input type="text" class="form-control inputStyle" placeholder="Digite um username para sua quadra">
-        </div>
+        </div>   
+    </div>
+
+     
 
 <!-- CREDENCIAIS --------------------------------------------------------------------------------------------------------------- -->
 
@@ -23,22 +27,22 @@
     <hr class="geralPad">
 
         <div class="mb-3">
-            <label for="" class="labelStyle">RG</label>        
+            <label for="" class="form-label">RG</label>        
             <input type="text" class="form-control" placeholder="XX.XXX.XXX-X">    
         </div>
 
         <div class="mb-3">
-            <label for="" class="labelStyle">CPF</label>
+            <label for="" class="form-label">CPF</label>
             <input type="text" class="form-control" placeholder="XXX.XXX.XXX-XX">
         </div>
         <div class="mb-3">
-            <label for="" class="labelStyle">CNPJ</label>
+            <label for="" class="form-label">CNPJ</label>
             <input type="text" class="form-control" placeholder="XX. XXX. XXX/0001-XX" aria-label="Server">
         </div>
 
-        <label for="" class="labelStyle">Celular</label>
-        <label for="" class="labelStyle6">Email</label>
-        <label for="" class="labelStyle7">Telefone</label>
+        <label for="" class="form-label">Celular</label>
+        <label for="" class="form-label6">Email</label>
+        <label for="" class="form-label7">Telefone</label>
 
         <div class="mb-3 input-group">
             <input type="text" class="form-control" placeholder="+51 (XX) XXXXX-XXXX">
@@ -52,17 +56,17 @@
     <h2 class="name">FindLocations</h2>
     <hr class="geralPad">
 
-        <label for="" class="labelStyle">Rua</label>
-        <label for="" class="labelStyle4">CEP</label>
+        <label for="" class="form-label">Rua</label>
+        <label for="" class="form-label4">CEP</label>
 
         <div class="input-group mb-3">
             <input type="text" class="form-control col-10" placeholder="XX.XXX.XXX-X">        
             <input type="text" class="form-control col-2" placeholder="XXXXXX">    
         </div>
 
-        <label for="" class="labelStyle">Estado</label>
-        <label for="" class="labelStyle2">Cidade</label>
-        <label for="" class="labelStyle3">Bairro</label>
+        <label for="" class="form-label">Estado</label>
+        <label for="" class="form-label2">Cidade</label>
+        <label for="" class="form-label3">Bairro</label>
 
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="XXX.XXX.XXX-XX">
@@ -70,8 +74,8 @@
             <input type="text" class="form-control" placeholder="XXX.XXX.XXX-XX">
         </div>
         
-        <label for="" class="labelStyle">Número</label>
-        <label for="" class="labelStyle5">Complemento</label>
+        <label for="" class="form-label">Número</label>
+        <label for="" class="form-label5">Complemento</label>
 
         <div class="input-group mb-3">
             <input type="text" class="form-control col-2" placeholder="X-XX">
@@ -84,15 +88,15 @@
     <h2 class="name">FindSpecificities</h2>
     <hr class="geralPad">
 
-    <label for="" class="labelStyle">Preço</label>
+    <label for="" class="form-label">Preço</label>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">R$:</span>
         <input type="text" class="form-control" placeholder="Preço por hora: XXX,xx">
     </div>
     
-    <label for="" class="labelStyle">Abertura</label>
-    <label for="" class="labelStyle5">Descrição</label>
+    <label for="" class="form-label">Abertura</label>
+    <label for="" class="form-label">Descrição</label>
 
     <div class="input-group mb-3">
 
@@ -105,8 +109,15 @@
 
         <div class="col-1"></div>
 
-        <textarea class="form-control col-8" id="divEnd" placeholder="Escreva uma breve descrição para a sua quadra"></textarea>
+        <textarea class="form-control col-5" id="divEnd" placeholder="Escreva uma breve descrição para a sua quadra (banheiro, vestiário, bebedouro, churrasqueira, bar, área de lazer)"></textarea>
+
+        <div class="col-1"></div>
+
+        <div class="col-2">
+            <button class="buttonS btn btn-success btn-lg d-flex">Cadastrar</button>
+        </div>
     </div>
+
 
     <h1 class="h1Style d-flex">Seja bem-vindo a FindSoccer</h1>
     <h6 class="h6Style d-flex">Seu jogo começa aqui</h6>
@@ -134,42 +145,9 @@ export default {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-.labelStyle{
+.form-label{
     color: #1FD86F;
     font-size: large;
-}
-.inputStyle{
-    font-style: italic;
-}
-.labelStyle2{
-    color: #1FD86F;
-    font-size: large;
-    margin-left: 320px;
-}
-.labelStyle3{
-    color: #1FD86F;
-    font-size: large;
-    margin-left: 315px;
-}
-.labelStyle4{
-    color: #1FD86F;
-    font-size: large;
-    margin-left: 900px;
-}
-.labelStyle5{
-    color: #1FD86F;
-    font-size: large;
-    margin-left: 305px;
-}
-.labelStyle6{
-    color: #1FD86F;
-    font-size: large;
-    margin-left: 317px;
-}
-.labelStyle7{
-    color: #1FD86F;
-    font-size: large;
-    margin-left: 327px;
 }
 #divEnd{
     justify-content: end;
@@ -183,6 +161,9 @@ export default {
     font-style: italic;
     margin-right: 300px;
     justify-content: end;
+}
+.buttonS{
+    justify-content: center;
 }
 
 </style>

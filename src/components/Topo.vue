@@ -53,8 +53,8 @@
                                 <RouterLink class="dropdown-item" to="/quadras">Quadras</RouterLink>
                                 <RouterLink class="dropdown-item" to="/user">Usuário</RouterLink>
                                 <RouterLink class="dropdown-item" to="/quadras/new">Cadastre Quadras</RouterLink>
-                                <a class="dropdown-item" href="#">Configurações</a>
-                                <a class="dropdown-item" href="#">Sair</a>
+                                <!-- <a class="dropdown-item" href="#">Configurações</a> -->
+                                <a class="dropdown-item" href="#" onclick="exit()">Sair</a> <!-- FUNÇÃO EXIT -->
                             </div>
                         </li>
                     </ul>
