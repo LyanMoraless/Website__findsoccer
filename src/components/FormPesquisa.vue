@@ -1,7 +1,23 @@
+<script setup>
+import { computed } from 'vue';
+import { useQuadrasStore } from "@/stores/quadras";
+
+const store = useQuadrasStore();
+
+const pesquisar = () => {
+  this.$router.push("/quadras");
+};
+
+const tiposDeQuadras = computed(() => (store.tiposDeQuadras));
+</script>
+
+
 <template>
   <form class="form-inline" @submit.prevent="pesquisar()">
     <select class="form-control mr-sm-2 menus" name="tipo">
-      <option v-for="tiposDeQuadra in tiposDeQuadras" :key="tiposDeQuadra.id">{{tiposDeQuadra.nome}}</option>
+      <option v-for="tiposDeQuadra in tiposDeQuadras" :key="tiposDeQuadra.id">
+        {{ tiposDeQuadra.nome }}
+      </option>
     </select>
 
     <select class="form-control mr-sm-2 menus" name="cidade">
@@ -48,23 +64,3 @@
   </form>
 </template>
 
-<script>
-import { useQuadrasStore } from "../stores/quadras";
-const store = useQuadrasStore();
-
-export default {
-  methods: {
-    pesquisar() {
-      this.$router.push("/quadras");
-    },
-  },
-  computed: {
-    tiposDeQuadras() {
-      return store.tiposDeQuadras;
-    },
-  },
-};
-</script>
-
-<style>
-</style>

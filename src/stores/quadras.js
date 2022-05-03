@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+
 import api from '@/api'
 
 export const useQuadrasStore = defineStore('quadras', {
@@ -13,7 +14,6 @@ export const useQuadrasStore = defineStore('quadras', {
       quadras: [],
       tiposDeQuadras: [],
       quadrasMaisAcessadas: [],
-
       quadrasRecentes: [],
       quadrasMaisAvaliadas: []
     }
@@ -33,7 +33,6 @@ export const useQuadrasStore = defineStore('quadras', {
       const res = await api.get("/quadras-tipos");
       this.tiposDeQuadras = res.data;
     },
-
     consultarQuadrasRecentes() {
     },
     consultarQuadrasMaisAvaliadas() {
