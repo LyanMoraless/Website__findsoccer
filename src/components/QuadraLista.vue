@@ -1,9 +1,9 @@
 <template>
-    <div class="card mb-3">
+    <div class="card mb-3" v-if="quadra">
         <router-link to="/quadras/1">
             <div class="row g-0 ">
                 <div class="col-md-4">
-                    <img :src="quadra.foto.url" class="img-fluid rounded-start mostAcessed2" />
+                    <img :src="quadra.foto.url" class="img-fluid rounded-start mostAcessed2" v-if="quadra.foto" />
                 </div>
                 <div class="col-md-5">
                     <div class="card-body">
@@ -14,9 +14,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 d-flex align-items-end cards2">
-                    <h3>{{ quadra.preco.preco2 }}</h3>
-                    <h4>{{ quadra.preco.preco1 }}</h4>
+                <div class="col-3 d-flex align-items-end cards2" v-if="quadra.preco">
+                    <h3 v-if="quadra.preco.preco2">{{ quadra.preco.preco2 }}</h3>
+                    <h4 v-if="quadra.preco.preco1">{{ quadra.preco.preco1 }}</h4>
                 </div>
             </div>
         </router-link>

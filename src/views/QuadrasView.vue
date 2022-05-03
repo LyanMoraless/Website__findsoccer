@@ -1,16 +1,25 @@
 <template>
-
+  <div>
     <h2 class="marginTitleQd1">
-        Quadras - Bauru/Sp
-        <hr />
+      Quadras - Bauru/Sp
+      <hr />
     </h2>
 
     <div class="container quadrasPadding">
-
-         <QuadraLista v-for="quadra in quadras" :key="quadra.id" :quadra="quadra" id="quadrasStyle"/>
-         <QuadraLista v-for="quadra in quadras" :key="quadra.id" :quadra="quadra" id="quadrasStyle"/>
-
+      <QuadraLista
+        v-for="quadra in quadras"
+        :key="quadra.id"
+        :quadra="quadra"
+        id="quadrasStyle"
+      />
+      <QuadraLista
+        v-for="quadra in quadras"
+        :key="quadra.id"
+        :quadra="quadra"
+        id="quadrasStyle"
+      />
     </div>
+  </div>
 </template>
 
 <script>
@@ -20,27 +29,28 @@ import { useQuadrasStore } from "../stores/quadras";
 const store = useQuadrasStore();
 
 export default {
-    components: { QuadraLista },
-    computed: {
-        quadras() {
-            return store.quadras
-        }
-    }
-}
+  components: { QuadraLista },
+  computed: {
+    quadras() {
+      return store.quadras;
+    },
+  },
+  mounted() {
+    store.consultarQuadras();
+  },
+};
 </script>
 
 <style>
-
-.marginTitleQd1{
-    font-style: italic;
-    margin: 80px 150px;
+.marginTitleQd1 {
+  font-style: italic;
+  margin: 80px 150px;
 }
-.quadrasPadding{
-    margin-top: 50px;
-    margin-bottom: 50px;
+.quadrasPadding {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-#quadrasStyle{
-    margin-top: 50px;
+#quadrasStyle {
+  margin-top: 50px;
 }
-
 </style>
