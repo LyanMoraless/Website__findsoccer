@@ -25,9 +25,9 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-3 d-flex align-items-end cards2">
-                    <h3 v-if="quadra.precoHora">Hora:{{ quadra.precoHora }}</h3>
-                    <h4 v-if="quadra.precoMeiaHora">Meia Hora:{{ quadra.precoMeiaHora }}</h4>
+                <div class="col-3 d-flex align-items-end cards21">
+                    <h3 v-if="quadra.precoHora">R$: {{ quadra.precoHora }}/Hr</h3>
+                    <!-- <h4 v-if="quadra.precoMeiaHora">{{ quadra.precoMeiaHora }}</h4> -->
                 </div>
             </div>
         </router-link>

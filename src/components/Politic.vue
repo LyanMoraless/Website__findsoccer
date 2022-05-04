@@ -56,10 +56,6 @@ export default {
 </script>
 
 <style>
-
-body{
-     background-image: url(../../public/img/c.avif); /* COLOCAR IMAGEM */
-}
 .formsZin{
     margin-top: 100px;
     background-color: white;
