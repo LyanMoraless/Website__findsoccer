@@ -1,3 +1,14 @@
+<script>
+import StarRating from 'vue-star-rating'
+
+export default {
+    props: ['quadra'],
+    components: {
+        StarRating
+    }
+}
+</script>
+
 <template>
     <div class="card mb-3" v-if="quadra">
         <router-link to="/quadras/1">
@@ -10,24 +21,16 @@
                         <h5 class="card-title cards">{{ quadra.nome }}</h5>
                         <p class="card-text cards2">{{ quadra.descricao }}</p>
                         <div class="card-text">
-                            <h5 class="text-muted cards2">Avaliação</h5>
+                            <star-rating :read-only="true" :rating="quadra.avaliacao" :increment="0.01" :star-size="20" />
                         </div>
                     </div>
                 </div>
-                <div class="col-3 d-flex align-items-end cards2" v-if="quadra.preco">
-                    <h3 v-if="quadra.preco.preco2">{{ quadra.preco.preco2 }}</h3>
-                    <h4 v-if="quadra.preco.preco1">{{ quadra.preco.preco1 }}</h4>
+                <div class="col-3 d-flex align-items-end cards2">
+                    <h3 v-if="quadra.precoHora">Hora:{{ quadra.precoHora }}</h3>
+                    <h4 v-if="quadra.precoMeiaHora">Meia Hora:{{ quadra.precoMeiaHora }}</h4>
                 </div>
             </div>
         </router-link>
     </div>
 </template>
 
-<script>
-export default {
-    props: ['quadra'],
-}
-</script>
-
-<style>
-</style>

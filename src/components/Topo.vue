@@ -1,74 +1,88 @@
 <template>
-    <header class="topo">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <div class="col-2">
-                    <RouterLink class="navbar-brand logo" to="/">
-                        <img src="@/assets/img/Topo/logo.svg" />
-                    </RouterLink>
-                </div>
-                <div class="col-2"></div>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
+  <header class="topo">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <RouterLink class="navbar-brand logo" to="/">
+          <img src="@/assets/img/Topo/logo.svg" />
+        </RouterLink>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-block d-sm-none">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <RouterLink to="/quadras" class="nav-link">Quadras</RouterLink>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link">Usuário</a></li>
+              <li class="nav-item">
+                <RouterLink to="/quadras/new" class="nav-link">
+                  Cadastre Quadras
+                </RouterLink>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Configurações</a>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link">Sair</a></li>
+            </ul>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <FormPesquisa />
+          </div>
+        </div>
+
+        <div class="col-1 d-none d-lg-block">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="bi bi-list" style="font-size: 1.5em"></i>
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <RouterLink class="dropdown-item" to="/quadras"
+                  >Quadras</RouterLink
                 >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="d-block d-sm-none">
-                        <ul class="navbar-nav">
-                            <RouterLink to="/quadras">Quadras</RouterLink>
-                            <a>Usuário</a>
-                            <RouterLink to="/quadras/new">Cadastre Quadras</RouterLink>
-                            <a>Configurações</a>
-                            <a>Sair</a>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-6">
-                    <FormPesquisa />
-                </div>
-
-                <div class="col-2">
-                    <ul class="navbar-nav d-none d-sm-block">
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                id="navbarDropdownMenuLink"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >
-                                <i class="bi bi-list" style="font-size: 1.5em"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <RouterLink class="dropdown-item" to="/quadras">Quadras</RouterLink>
-                                <RouterLink class="dropdown-item" to="/user">Usuário</RouterLink>
-                                <RouterLink class="dropdown-item" to="/quadras/new">Cadastre Quadras</RouterLink>
-                                <!-- <a class="dropdown-item" href="#">Configurações</a> -->
-                                <a class="dropdown-item" href="#" onclick="exit()">Sair</a> <!-- FUNÇÃO EXIT -->
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+                <RouterLink class="dropdown-item" to="/user"
+                  >Usuário</RouterLink
+                >
+                <RouterLink class="dropdown-item" to="/quadras/new"
+                  >Cadastre Quadras</RouterLink
+                >
+                <!-- <a class="dropdown-item" href="#">Configurações</a> -->
+                <a class="dropdown-item" href="#" onclick="exit()">Sair</a>
+                <!-- FUNÇÃO EXIT -->
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 </template>
 
 <script>
 import FormPesquisa from "./FormPesquisa.vue";
 export default {
-    components: { FormPesquisa }
-}
+  components: { FormPesquisa },
+};
 </script>
 
 <style>

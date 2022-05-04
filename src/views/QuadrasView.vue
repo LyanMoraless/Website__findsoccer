@@ -12,13 +12,7 @@
         :quadra="quadra"
         id="quadrasStyle"
       />
-      <QuadraLista
-        v-for="quadra in quadras"
-        :key="quadra.id"
-        :quadra="quadra"
-        id="quadrasStyle"
-      />
-    </div>
+      </div>
   </div>
 </template>
 
@@ -32,7 +26,7 @@ export default {
   components: { QuadraLista },
   computed: {
     quadras() {
-      return store.quadras;
+      return store.quadrasFiltradas;
     },
   },
   mounted() {

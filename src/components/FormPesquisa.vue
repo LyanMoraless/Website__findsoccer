@@ -1,33 +1,68 @@
 <script setup>
-import { computed } from 'vue';
+import { computed } from "vue";
 import { useQuadrasStore } from "@/stores/quadras";
+import { useRouter } from "vue-router";
 
 const store = useQuadrasStore();
+const router = useRouter();
 
 const pesquisar = () => {
-  this.$router.push("/quadras");
+  router.push("/quadras");
 };
 
-const tiposDeQuadras = computed(() => (store.tiposDeQuadras));
+const tiposDeQuadras = computed(() => store.tiposDeQuadras);
+const tipoDeQuadra = computed({
+  get() {
+    return store.filtro.tipo_id;
+  },
+  set(value) {
+    store.$patch((state) => {
+      state.filtro.tipo_id = value;
+    });
+  },
+});
+
+const cidades = computed(() => store.cidades);
+const cidade = computed({
+  get() {
+    return store.filtro.cidade;
+  },
+  set(value) {
+    store.$patch((state) => {
+      state.filtro.cidade = value;
+    });
+  },
+});
 </script>
 
-
 <template>
+
   <form class="form-inline" @submit.prevent="pesquisar()">
-    <select class="form-control mr-sm-2 menus" name="tipo">
-      <option v-for="tiposDeQuadra in tiposDeQuadras" :key="tiposDeQuadra.id">
+    <select
+      class="form-control mr-sm-2 menus"
+      name="tipo"
+      v-model="tipoDeQuadra"
+    >
+    <option :value="null">Todos os tipos</option>
+      <option
+        v-for="tiposDeQuadra in tiposDeQuadras"
+        :key="tiposDeQuadra.id"
+        :value="tiposDeQuadra.id"
+      >
         {{ tiposDeQuadra.nome }}
       </option>
     </select>
 
     <select class="form-control mr-sm-2 menus" name="cidade">
-      <option>Estado - Cidade</option>
-      <option>São Paulo</option>
-      <option>Minas Gerais</option>
-      <option>Rio de Janeiro</option>
-      <option>Outras Opções...</option>
+      <option :value="null">Todos as cidades</option>
+      <option 
+      v-for="cidade in cidades" 
+      :key="cidade" 
+      :value="cidade"
+      >
+      {{ cidade.nome }}
+      </option>
     </select>
-
     <select class="form-control mr-sm-2 menus" name="data">
       <option>1</option>
       <option>2</option>
@@ -48,7 +83,6 @@ const tiposDeQuadras = computed(() => (store.tiposDeQuadras));
       <option>27</option>
       <option>31</option>
     </select>
-
     <select class="form-control mr-sm-2 menus" name="hora">
       <option>00:00</option>
       <option>05:00</option>
@@ -59,7 +93,6 @@ const tiposDeQuadras = computed(() => (store.tiposDeQuadras));
       <option>16:00</option>
       <option>18:00</option>
     </select>
-
     <button class="btn butt my-2 my-sm-0" type="submit">Search</button>
   </form>
 </template>

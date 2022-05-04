@@ -13,10 +13,16 @@ export const useQuadrasStore = defineStore('quadras', {
       },
       quadras: [],
       tiposDeQuadras: [],
+      cidades: [],
       quadrasMaisAcessadas: [],
       quadrasRecentes: [],
       quadrasMaisAvaliadas: []
     }
+  },
+  getters: {
+    quadrasFiltradas: (state) => state.quadras
+      .filter((quadra) => (state.filtro.tipo_id == null || quadra.quadra_tipo_id == state.filtro.tipo_id))
+      // .filter((quadra) => (state.filtro.cidade == null || (quadra.cidade == state.filtro.cidade.nome && quadra.cidade == state.filtro.cidade.estado)))
   },
   actions: {
     async consultarQuadras() {
@@ -32,6 +38,10 @@ export const useQuadrasStore = defineStore('quadras', {
     async consultarTiposDeQuadras() {
       const res = await api.get("/quadras-tipos");
       this.tiposDeQuadras = res.data;
+    },
+    async consultarCidades() {
+      const res = await api.get("/locais/cidades");
+      this.cidades = res.data
     },
     consultarQuadrasRecentes() {
     },
