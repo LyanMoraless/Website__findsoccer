@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <img :src="quadra.foto.url" class="card-img-top mostAcessed" alt="..." />
+        <img :src="quadra.foto.url" class="card-img-top mostAcessed" v-if="quadra.foto" />
         <div class="card-body">
             <h5 class="card-title direitos2">{{ quadra.nome }}</h5>
             <p class="card-text">{{ quadra.descricao }}</p>

@@ -1,169 +1,368 @@
-<template>
+<script setup>
+import api from "@/api";
+import axios from "axios";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useQuadrasStore } from "../stores/quadras";
 
-<div class="container">
+defineProps(["quadrasCadastro"]);
 
-<!-- NOMES --------------------------------------------------------------------------------------------------------------- -->
+const router = useRouter();
 
-    <h2 class="name">FindNames</h2>
-    <hr class="geralPad">
+const store = useQuadrasStore();
 
-    <div class="row g-3">
-        <div class="col-md-12">
-            <label for="nameQuadra" class="form-label">Nome da Quadra</label>
-            <input type="text" class="form-control" placeholder="Digite o nome da quadra">
-        </div>
+const horarios = ref(store.horarios);
 
-        <div class="col-md-12">
-            <label for="nameQuadra" class="form-label">Username da Quadra</label>
-            <input type="text" class="form-control inputStyle" placeholder="Digite um username para sua quadra">
-        </div>   
-    </div>
+const nome = ref();
+const username = ref();
+const descricao = ref();
+const img = ref();
 
-     
+const cel = ref();
+const fone = ref();
+const email = ref();
 
-<!-- CREDENCIAIS --------------------------------------------------------------------------------------------------------------- -->
+const cep = ref();
+const rua = ref();
+const compl = ref();
+const bairro = ref();
+const estado = ref();
+const cidade = ref();
+const numero = ref();
 
-    <h2 class="name">FindCredentials</h2>
-    <hr class="geralPad">
+const preco = ref();
 
-        <div class="mb-3">
-            <label for="" class="form-label">RG</label>        
-            <input type="text" class="form-control" placeholder="XX.XXX.XXX-X">    
-        </div>
+const consultarCep = async () => {
+  const res = await axios.get(`https://viacep.com.br/ws/${cep.value}/json/`);
+  rua.value = res.data.logradouro;
+  compl.value = res.data.complemento;
+  bairro.value = res.data.bairro;
+  estado.value = res.data.uf;
+  cidade.value = res.data.localidade;
+};
 
-        <div class="mb-3">
-            <label for="" class="form-label">CPF</label>
-            <input type="text" class="form-control" placeholder="XXX.XXX.XXX-XX">
-        </div>
-        <div class="mb-3">
-            <label for="" class="form-label">CNPJ</label>
-            <input type="text" class="form-control" placeholder="XX. XXX. XXX/0001-XX" aria-label="Server">
-        </div>
+const submitForm = async () => {
+  const res = await store.cadastrarLocal({
+    nome: nome.value,
+    username: username.value,
+    descricao: descricao.value,
+    img: img.value,
 
-        <label for="" class="form-label">Celular</label>
-        <label for="" class="form-label6">Email</label>
-        <label for="" class="form-label7">Telefone</label>
+    //CHECAR SE ESSES 3 CAMPOS PODEM OU DEVEM PERTENCER AO CADASTRO DE UM LOCAL
+    cel: cel.value,
+    fone: fone.value,
+    email: email.value,
 
-        <div class="mb-3 input-group">
-            <input type="text" class="form-control" placeholder="+51 (XX) XXXXX-XXXX">
-            <input type="text" class="form-control" placeholder="user.best@gmail.com">
-            <input type="text" class="form-control" placeholder="XXXXXXXX">
-        </div>
+    horarios: horarios.value,
+    endereco: {
+      cep: cep.value,
+      rua: rua.value,
+      compl: compl.value,
+      bairro: bairro.value,
+      estado: estado.value,
+      cidade: cidade.value,
+      numero: numero.value,
+    },
+    preco: preco.value,
+  });
 
-<!-- LOCALIZAÇÃO --------------------------------------------------------------------------------------------------------------- -->
-        
+  console.log(res);
 
-    <h2 class="name">FindLocations</h2>
-    <hr class="geralPad">
+  await store.cadastrarQuadra({
+    local_id: res.data.id,
+    quadra_tipo_id: 1,
+  });
 
-        <label for="" class="form-label">Rua</label>
-        <label for="" class="form-label4">CEP</label>
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control col-10" placeholder="XX.XXX.XXX-X">        
-            <input type="text" class="form-control col-2" placeholder="XXXXXX">    
-        </div>
-
-        <label for="" class="form-label">Estado</label>
-        <label for="" class="form-label2">Cidade</label>
-        <label for="" class="form-label3">Bairro</label>
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="XXX.XXX.XXX-XX">
-            <input type="text" class="form-control" placeholder="XXX.XXX.XXX-XX">
-            <input type="text" class="form-control" placeholder="XXX.XXX.XXX-XX">
-        </div>
-        
-        <label for="" class="form-label">Número</label>
-        <label for="" class="form-label5">Complemento</label>
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control col-2" placeholder="X-XX">
-            <div class="col-2"></div>
-            <textarea class="form-control col-8" id="divEnd"></textarea>
-        </div>
-
-<!-- ESPECIFICIDADES ------------------------------------------------------------------------------------------------------------- -->
-
-    <h2 class="name">FindSpecificities</h2>
-    <hr class="geralPad">
-
-    <label for="" class="form-label">Preço</label>
-
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">R$:</span>
-        <input type="text" class="form-control" placeholder="Preço por hora: XXX,xx">
-    </div>
-    
-    <label for="" class="form-label">Abertura</label>
-    <label for="" class="form-label">Descrição</label>
-
-    <div class="input-group mb-3">
-
-        <select class="col-3 form-control">
-            <option>Segunda - Sexta</option>
-            <option>Segunda - Sábado</option>
-            <option>Segunda - Domingo</option>
-            <option>Sábado - Domingo</option>
-        </select>
-
-        <div class="col-1"></div>
-
-        <textarea class="form-control col-5" id="divEnd" placeholder="Escreva uma breve descrição para a sua quadra (banheiro, vestiário, bebedouro, churrasqueira, bar, área de lazer)"></textarea>
-
-        <div class="col-1"></div>
-
-        <div class="col-2">
-            <button class="buttonS btn btn-success btn-lg d-flex">Cadastrar</button>
-        </div>
-    </div>
-
-
-    <h1 class="h1Style d-flex">Seja bem-vindo a FindSoccer</h1>
-    <h6 class="h6Style d-flex">Seu jogo começa aqui</h6>
-
-</div>
-
-</template>
-
-<script>
-export default {
-    props: ['quadrasCadastro']
-
-}
+  router.replace('/locais');
+  
+};
 </script>
 
+<template>
+  <div>
+    <div class="title">
+      Cadastro de Local
+      <!-- <img src="../../public/img/Logo 1.jpg" alt=""> -->
+    </div>
+    
+    <div class="container">
+      <!-- NOMES --------------------------------------------------------------------------------------------------------------- -->
+
+      <h4 class="name">Nomenclaturas</h4>
+      <hr class="geralPad" />
+
+      <form @submit.prevent="submitForm">
+        <div class="row">
+          <div class="form-group col">
+            <label for="nameQuadra">Nome do Local</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Digite o nome do Local"
+              v-model="nome"
+            />
+          </div>
+
+          <div class="col">
+            <label for="nameQuadra">Username do Local</label>
+            <input
+              type="text"
+              class="form-control inputStyle"
+              placeholder="Digite um username para seu Local"
+              v-model="username"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-10">
+            <label for="">Descrição</label>
+            <textarea
+              class="form-control"
+              id="divEnd"
+              placeholder="Escreva uma breve descrição para o seu local (banheiro, vestiário, bebedouro, churrasqueira, bar, área de lazer)"
+              v-model="descricao"
+            ></textarea>
+          </div>
+
+          <div class="col">
+            <label for="">Imagens</label>
+            <input type="text" class="form-control"  placeholder="Zip" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+        </div>
+
+        <!-- CREDENCIAIS --------------------------------------------------------------------------------------------------------------- -->
+
+        <h4 class="name">Credenciais</h4>
+        <hr class="geralPad" />
+
+        <div class="row">
+          <div class="form-group col">
+            <label for="">Celular</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="+51 (XX) XXXXX-XXXX"
+              v-model="cel"
+            />
+          </div>
+
+          <div class="form-group col">
+            <label for="">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="user.best@gmail.com"
+              v-model="email"
+            />
+          </div>
+
+          <div class="form-group col">
+            <label for="">Telefone</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="XXXXXXXX"
+              v-model="fone"
+            />
+          </div>
+        </div>
+
+        <!-- LOCALIZAÇÃO --------------------------------------------------------------------------------------------------------------- -->
+
+        <h4 class="name">Localização</h4>
+        <hr class="geralPad" />
+
+        <div class="row">
+          <div class="form-group col-2">
+            <label for="">CEP</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="XXXXXX"
+              v-model="cep"
+              @change="consultarCep"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col">
+            <label for="">Rua</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Machado de Assis"
+              v-model="rua"
+            />
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="">Número</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="XXX"
+              v-model="numero"
+            />
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="">Complemento</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Apto X"
+              v-model="compl"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col">
+            <label for="">Estado</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Sp"
+              v-model="estado"
+            />
+          </div>
+          <div class="form-group col">
+            <label for="">Cidade</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Bauru"
+              v-model="cidade"
+            />
+          </div>
+          <div class="form-group col">
+            <label for="">Bairro</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Estoril"
+              v-model="bairro"
+            />
+          </div>
+        </div>
+
+        <!-- ESPECIFICIDADES ------------------------------------------------------------------------------------------------------------- -->
+
+        <h4 class="name">Especificidades</h4>
+        <hr class="geralPad" />
+
+        <div class="row">
+          <div class="form-group col">
+            <label for="">Preço</label>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">R$:</span>
+              </div>
+
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Preço por hora: XXX,xx"
+                v-model="preco"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- <h3>Horário de Funcionamento</h3> -->
+
+        <div class="row">
+          <div class="col-md-4" style="color: #1fd86f; margin-bottom: 20px">
+            Dia da Semana
+          </div>
+          <div class="col-md-2 details">Aberto</div>
+          <div class="col-md-3 details">Horário de abertura</div>
+          <div class="col-md-3 details">Horário de fechamento</div>
+        </div>
+
+        <div class="row" v-for="horario in horarios" :key="horario.dia">
+          <div class="form-group col-md-5">{{ horario.desc }}</div>
+          <div class="form-group form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="horario.aberto"
+            />
+          </div>
+          <div class="form-group col-md-3 form-check" v-if="horario.aberto">
+            <input type="text" class="form-control" v-model="horario.inicio" />
+          </div>
+          <div class="form-group col-md-3" v-if="horario.aberto">
+            <input type="text" class="form-control" v-model="horario.fim" />
+          </div>
+        </div>
+
+        <div>
+          <hr />
+
+          <button class="buttonS btn btn-success btn-lg d-flex">
+            Cadastrar
+          </button>
+        </div>
+      </form>
+
+      <h1 class="h1Style">Seja bem-vindo a FindSoccer</h1>
+      <h4 class="h4Style">Seu jogo começa aqui</h4>
+    </div>
+  </div>
+</template>
+
+
 <style>
-
-
-.name{
-    font-style: italic;
-    margin-top: 50px;
-    margin-bottom: 40px;
-}
-.geralPad{
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.form-label{
-    color: #1FD86F;
-    font-size: large;
-}
-#divEnd{
-    justify-content: end;
-}
-.h1Style{
-    margin-top: 100px;
-    justify-content: center;
-}
-.h6Style{
-    color: #1FD86F;
-    font-style: italic;
-    margin-right: 300px;
-    justify-content: end;
-}
-.buttonS{
-    justify-content: center;
+.title {
+  font-size: 35px;
+  font-style: italic;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
+.name {
+  font-style: italic;
+  margin-top: 50px;
+}
+.geralPad {
+  margin-bottom: 50px;
+}
+label {
+  color: #1fd86f;
+  font-size: large;
+}
+#divEnd {
+  justify-content: end;
+}
+.h1Style {
+  margin-top: 100px;
+  justify-content: center;
+  display: flex;
+}
+.h4Style {
+  color: #1fd86f;
+  font-style: italic;
+  justify-content: center;
+  display: flex;
+  margin-top: -10px;
+  margin-bottom: 50px;
+  margin-left: 300px;
+}
+.buttonS {
+  justify-content: center;
+}
+.details {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #1fd86f;
+}
 </style>

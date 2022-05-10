@@ -7,7 +7,7 @@
 
     <div class="container quadrasPadding">
       <QuadraLista
-        v-for="quadra in quadras"
+        v-for="quadra in quadrasFiltradas"
         :key="quadra.id"
         :quadra="quadra"
         id="quadrasStyle"
@@ -16,23 +16,19 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { storeToRefs } from "pinia";
+import { onMounted } from "vue-demi";
 import QuadraLista from "../components/QuadraLista.vue";
 import { useQuadrasStore } from "../stores/quadras";
 
 const store = useQuadrasStore();
+const {quadrasFiltradas} = storeToRefs(store);
 
-export default {
-  components: { QuadraLista },
-  computed: {
-    quadras() {
-      return store.quadrasFiltradas;
-    },
-  },
-  mounted() {
-    store.consultarQuadras();
-  },
-};
+onMounted(() => {
+  store.consultarQuadras();
+})
+
 </script>
 
 <style>

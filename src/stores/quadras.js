@@ -16,13 +16,64 @@ export const useQuadrasStore = defineStore('quadras', {
       cidades: [],
       quadrasMaisAcessadas: [],
       quadrasRecentes: [],
-      quadrasMaisAvaliadas: []
+      quadrasMaisAvaliadas: [],
+      horarios: [
+        {
+          dia: 7,
+          desc: "Sábado",
+          aberto: false,
+          inicio: "08:00",
+          fim: "22:00",
+        },
+        {
+          dia: 0,
+          desc: "Domingo",
+          aberto: false,
+          inicio: "08:00",
+          fim: "22:00",
+        },
+        {
+          dia: 1,
+          desc: "Segunda-feira",
+          aberto: true,
+          inicio: "08:00",
+          fim: "22:00",
+        },
+        {
+          dia: 2,
+          desc: "Terça-feira",
+          aberto: true,
+          inicio: "08:00",
+          fim: "22:00",
+        },
+        {
+          dia: 3,
+          desc: "Quarta-feira",
+          aberto: true,
+          inicio: "08:00",
+          fim: "22:00",
+        },
+        {
+          dia: 4,
+          desc: "Quinta-feira",
+          aberto: true,
+          inicio: "08:00",
+          fim: "22:00",
+        },
+        {
+          dia: 5,
+          desc: "Sexta-feira",
+          aberto: true,
+          inicio: "08:00",
+          fim: "22:00",
+        },
+      ]
     }
   },
   getters: {
     quadrasFiltradas: (state) => state.quadras
       .filter((quadra) => (state.filtro.tipo_id == null || quadra.quadra_tipo_id == state.filtro.tipo_id))
-      // .filter((quadra) => (state.filtro.cidade == null || (quadra.cidade == state.filtro.cidade.nome && quadra.cidade == state.filtro.cidade.estado)))
+    // .filter((quadra) => (state.filtro.cidade == null || (quadra.cidade == state.filtro.cidade.nome && quadra.cidade == state.filtro.cidade.estado)))
   },
   actions: {
     async consultarQuadras() {
@@ -32,8 +83,10 @@ export const useQuadrasStore = defineStore('quadras', {
     consultarQuadrasMaisAcessadas() {
     },
     async cadastrarQuadra(quadra) {
-      const res = await api.post("/quadras", quadra);
-      console.log(res);
+      return await api.post("/quadras", quadra);
+    },
+    async cadastrarLocal(local) {
+      return await api.post("/locais", local);
     },
     async consultarTiposDeQuadras() {
       const res = await api.get("/quadras-tipos");

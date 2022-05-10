@@ -12,6 +12,12 @@ const routes = [
     component: () => import('../views/QuadrasView.vue')
   },
   {
+    path: '/locais',
+    name: 'locais',
+    component: () => import('../views/MenuDoUserView.vue')
+  },
+  
+  {
     path: '/quadras/:id',
     name: 'quadraDetails',
     component: () => import('../views/QuadraDetailsView.vue')
@@ -20,11 +26,6 @@ const routes = [
     path: '/quadras/new',
     name: 'quadrasCadastro',
     component: () => import('../views/CadastreQuadrasView.vue')
-  },
-  {
-    path: '/user',
-    name: 'user',
-    component: () => import('../views/UserView.vue')
   },
   {
     path: '/politic',

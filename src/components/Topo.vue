@@ -23,10 +23,9 @@
               <li class="nav-item">
                 <RouterLink to="/quadras" class="nav-link">Quadras</RouterLink>
               </li>
-              <li class="nav-item"><a href="#" class="nav-link">Usuário</a></li>
               <li class="nav-item">
-                <RouterLink to="/quadras/new" class="nav-link">
-                  Cadastre Quadras
+                <RouterLink to="/locais" class="nav-link">
+                  Menu do Usuário
                 </RouterLink>
               </li>
               <li class="nav-item">
@@ -60,11 +59,8 @@
                 <RouterLink class="dropdown-item" to="/quadras"
                   >Quadras</RouterLink
                 >
-                <RouterLink class="dropdown-item" to="/user"
-                  >Usuário</RouterLink
-                >
-                <RouterLink class="dropdown-item" to="/quadras/new"
-                  >Cadastre Quadras</RouterLink
+                <RouterLink class="dropdown-item" to="/locais"
+                  >Menu do Usuário</RouterLink
                 >
                 <!-- <a class="dropdown-item" href="#">Configurações</a> -->
                 <a class="dropdown-item" href="#" onclick="exit()">Sair</a>
