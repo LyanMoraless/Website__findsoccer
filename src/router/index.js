@@ -23,10 +23,16 @@ const routes = [
     component: () => import('../views/QuadraDetailsView.vue')
   },
   {
+    path: '/locais/new',
+    name: 'locaisCadastro',
+    component: () => import('../views/CadastreLocaisView.vue')
+  },
+  {
     path: '/quadras/new',
     name: 'quadrasCadastro',
     component: () => import('../views/CadastreQuadrasView.vue')
   },
+  
   {
     path: '/politic',
     name: 'politic',

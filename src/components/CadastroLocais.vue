@@ -1,5 +1,4 @@
-
-    <script setup>
+<script setup>
 import api from "@/api";
 import axios from "axios";
 import { ref } from "vue";
@@ -15,15 +14,13 @@ const store = useQuadrasStore();
 const horarios = ref(store.horarios);
 
 const nome = ref();
-const largura = ref();
-const comprimento = ref();
-const piso = ref()
+const username = ref();
 const descricao = ref();
 const img = ref();
 
 const cel = ref();
+const fone = ref();
 const email = ref();
-const precHr = ref();
 
 const cep = ref();
 const rua = ref();
@@ -47,16 +44,14 @@ const consultarCep = async () => {
 const submitForm = async () => {
   const res = await store.cadastrarLocal({
     nome: nome.value,
-    largura: largura.value,
-    comprimento: comprimento.value,
-    piso: piso.value,
+    username: username.value,
     descricao: descricao.value,
     img: img.value,
 
     //CHECAR SE ESSES 3 CAMPOS PODEM OU DEVEM PERTENCER AO CADASTRO DE UM LOCAL
     cel: cel.value,
+    fone: fone.value,
     email: email.value,
-    precHr: precHr.value,
 
     horarios: horarios.value,
     endereco: {
@@ -78,26 +73,27 @@ const submitForm = async () => {
     quadra_tipo_id: 1,
   });
 
-  router.replace("/locais");
+  router.replace('/locais');
+  
 };
 </script>
 
-    <template>
+<template>
   <div>
     <div class="title">
       Cadastro de Local
       <!-- <img src="../../public/img/Logo 1.jpg" alt=""> -->
     </div>
-
+    
     <div class="container">
       <!-- NOMES --------------------------------------------------------------------------------------------------------------- -->
 
-      <h4 class="name">Dados específicos</h4>
+      <h4 class="name">Nomenclaturas</h4>
       <hr class="geralPad" />
 
       <form @submit.prevent="submitForm">
         <div class="row">
-          <div class="form-group col-md">
+          <div class="form-group col">
             <label for="nameQuadra">Nome do Local</label>
             <input
               type="text"
@@ -107,40 +103,19 @@ const submitForm = async () => {
             />
           </div>
 
-          <div class="col-md">
-            <label for="nameQuadra">Largura da Quadra</label>
+          <div class="col">
+            <label for="nameQuadra">Username do Local</label>
             <input
               type="text"
               class="form-control inputStyle"
-              placeholder="Digite a largura da sua quadra"
-              v-model="largura"
-            />
-          </div>
-
-          <div class="col-md">
-            <label for="nameQuadra">Comprimento da Quadra</label>
-            <input
-              type="text"
-              class="form-control inputStyle"
-              placeholder="Digite o comprimento da sua quadra"
-              v-model="comprimento"
+              placeholder="Digite um username para seu Local"
+              v-model="username"
             />
           </div>
         </div>
 
         <div class="row">
-
-            <div class="form-group col-md-4">
-            <label for="nameQuadra">Piso</label>
-            <input
-              type="text"
-              class="form-control inputStyle"
-              placeholder="Gramado sintético, híbrido, concreto"
-              v-model="piso"
-            />
-          </div>
-
-          <div class="col-md-6">
+          <div class="form-group col-md-10">
             <label for="">Descrição</label>
             <textarea
               class="form-control"
@@ -152,14 +127,10 @@ const submitForm = async () => {
 
           <div class="col">
             <label for="">Imagens</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Zip"
-              required
-              v-model="img"
-            />
-            <div class="invalid-feedback">Please provide a valid zip.</div>
+            <input type="text" class="form-control"  placeholder="Zip" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
           </div>
         </div>
 
@@ -179,7 +150,7 @@ const submitForm = async () => {
             />
           </div>
 
-          <div class="form-group col-md-6">
+          <div class="form-group col">
             <label for="">Email</label>
             <input
               type="text"
@@ -189,13 +160,13 @@ const submitForm = async () => {
             />
           </div>
 
-          <div class="form-group col-md-2">
-            <label for="">Preço por hora</label>
+          <div class="form-group col">
+            <label for="">Telefone</label>
             <input
               type="text"
               class="form-control"
-              placeholder="R$: XXX,xx"
-              v-model="precHr"
+              placeholder="XXXXXXXX"
+              v-model="fone"
             />
           </div>
         </div>

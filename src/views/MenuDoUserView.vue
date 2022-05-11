@@ -22,12 +22,15 @@ onMounted(() => {
       <hr style="margin-bottom: 50px;"/>
 
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <LocaisMenu :locais="locais" />
         </div>
 
-        <div class="col-md">
+        <div class="col-md-9">
           <CardQuadraLocais v-for="quadra in quadras" :quadra='quadra' :key="quadra.id"/>
+          <RouterLink class="list-group-item list-group-item-action y" to="/quadras/new">
+            Cadastrar nova quadra
+          </RouterLink>
         </div>
       </div>
     </div>

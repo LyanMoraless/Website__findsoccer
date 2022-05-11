@@ -18,7 +18,7 @@ const props = defineProps(['locais']);
       <small>And some small print.</small>
     </a>
 
-    <RouterLink class="list-group-item list-group-item-action y" to="/quadras/new">
+    <RouterLink class="list-group-item list-group-item-action y" to="/locais/new">
       Cadastrar novo local
     </RouterLink>
   </div>

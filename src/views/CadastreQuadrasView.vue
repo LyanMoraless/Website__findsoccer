@@ -1,17 +1,21 @@
 <template>
+
     <div>
+
+        
         <CadastroQuadras />
+
     </div>
+
 </template>
 
 <script>
-
-import CadastroQuadras from "../components/CadastroQuadras.vue";
-
+import CadastroQuadras from '@/components/CadastroQuadras.vue';
 export default {
-    components: {CadastroQuadras },
+    components: { CadastroQuadras }
 }
 </script>
 
 <style>
+
 </style>
