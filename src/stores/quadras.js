@@ -17,6 +17,9 @@ export const useQuadrasStore = defineStore('quadras', {
       quadrasMaisAcessadas: [],
       quadrasRecentes: [],
       quadrasMaisAvaliadas: [],
+
+//CADASTRO QUADRAS
+
       horarios: [
         {
           dia: 7,
@@ -67,7 +70,26 @@ export const useQuadrasStore = defineStore('quadras', {
           inicio: "08:00",
           fim: "22:00",
         },
+      ],
+
+//CADASTRO DOS DETALHES DAS QUADRAS
+
+      qdDtls: [
+        {
+          id: 1,
+          vestiario: true,
+          banheiro: true,
+          chuveiro: true,
+          bebedouro: true,
+          coletes: true,
+          juiz: false,
+          cantina: false,
+          areaAlimentacao: true,
+          chuteira: false,
+          bola: true
+        }
       ]
+
     }
   },
   getters: {

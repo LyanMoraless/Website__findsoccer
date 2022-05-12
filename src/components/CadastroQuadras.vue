@@ -13,11 +13,12 @@ const router = useRouter();
 const store = useQuadrasStore();
 
 const horarios = ref(store.horarios);
+const qdDtls = ref(store.qdDtls); //qdDtls = quadra details
 
 const nome = ref();
 const largura = ref();
 const comprimento = ref();
-const piso = ref()
+const piso = ref();
 const descricao = ref();
 const img = ref();
 
@@ -59,6 +60,7 @@ const submitForm = async () => {
     precHr: precHr.value,
 
     horarios: horarios.value,
+    qdDtls: qdDtls.value,
     endereco: {
       cep: cep.value,
       rua: rua.value,
@@ -85,7 +87,7 @@ const submitForm = async () => {
     <template>
   <div>
     <div class="title">
-      Cadastro de Local
+      Cadastro de Quadra
       <!-- <img src="../../public/img/Logo 1.jpg" alt=""> -->
     </div>
 
@@ -129,8 +131,7 @@ const submitForm = async () => {
         </div>
 
         <div class="row">
-
-            <div class="form-group col-md-4">
+          <div class="form-group col-md-4">
             <label for="nameQuadra">Piso</label>
             <input
               type="text"
@@ -200,135 +201,97 @@ const submitForm = async () => {
           </div>
         </div>
 
-        <!-- LOCALIZAÇÃO --------------------------------------------------------------------------------------------------------------- -->
-
-        <h4 class="name">Localização</h4>
-        <hr class="geralPad" />
-
-        <div class="row">
-          <div class="form-group col-2">
-            <label for="">CEP</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="XXXXXX"
-              v-model="cep"
-              @change="consultarCep"
-            />
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="form-group col">
-            <label for="">Rua</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Machado de Assis"
-              v-model="rua"
-            />
-          </div>
-
-          <div class="form-group col-md-2">
-            <label for="">Número</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="XXX"
-              v-model="numero"
-            />
-          </div>
-
-          <div class="form-group col-md-2">
-            <label for="">Complemento</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Apto X"
-              v-model="compl"
-            />
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="form-group col">
-            <label for="">Estado</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Sp"
-              v-model="estado"
-            />
-          </div>
-          <div class="form-group col">
-            <label for="">Cidade</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Bauru"
-              v-model="cidade"
-            />
-          </div>
-          <div class="form-group col">
-            <label for="">Bairro</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Estoril"
-              v-model="bairro"
-            />
-          </div>
-        </div>
-
-        <!-- ESPECIFICIDADES ------------------------------------------------------------------------------------------------------------- -->
-
-        <h4 class="name">Especificidades</h4>
-        <hr class="geralPad" />
-
-        <div class="row">
-          <div class="form-group col">
-            <label for="">Preço</label>
-
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">R$:</span>
-              </div>
-
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Preço por hora: XXX,xx"
-                v-model="preco"
-              />
-            </div>
-          </div>
-        </div>
-
         <!-- <h3>Horário de Funcionamento</h3> -->
 
-        <div class="row">
-          <div class="col-md-4" style="color: #1fd86f; margin-bottom: 20px">
-            Dia da Semana
-          </div>
-          <div class="col-md-2 details">Aberto</div>
-          <div class="col-md-3 details">Horário de abertura</div>
-          <div class="col-md-3 details">Horário de fechamento</div>
-        </div>
-
-        <div class="row" v-for="horario in horarios" :key="horario.dia">
-          <div class="form-group col-md-5">{{ horario.desc }}</div>
-          <div class="form-group form-check col-md-1">
+        <div class="row mgDtls" v-for="details in qdDtls" :key="details.id">
+          <div class="col-md-3" id="x">Vestiário:</div>
+          <div class="form-check col-md-1">
             <input
               type="checkbox"
               class="form-check-input"
-              v-model="horario.aberto"
+              v-model="details.vestiario"
             />
           </div>
-          <div class="form-group col-md-3 form-check" v-if="horario.aberto">
-            <input type="text" class="form-control" v-model="horario.inicio" />
+
+          <div class="col-md-3">Banheiro:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.banheiro"
+            />
           </div>
-          <div class="form-group col-md-3" v-if="horario.aberto">
-            <input type="text" class="form-control" v-model="horario.fim" />
+
+          <div class="col-md-3">Chuveiro:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.chuveiro"
+            />
+          </div>
+
+          <div class="col-md-3" id="x">Bebedouro:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.bebedouro"
+            />
+          </div>
+
+          <div class="col-md-3">Coletes:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.coletes"
+            />
+          </div>
+
+          <div class="col-md-3">Juiz:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.juiz"
+            />
+          </div>
+
+          <div class="col-md-3" id="x">Cantina:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.cantina"
+            />
+          </div>
+
+          <div class="col-md-3">Area de Alimentação:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.areaAlimentacao"
+            />
+          </div>
+
+          <div class="col-md-3">Chuteira:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.chuteira"
+            />
+          </div>
+
+          <div class="col-md-3">Bola:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.bola"
+            />
           </div>
         </div>
 
@@ -393,5 +356,11 @@ label {
   justify-content: center;
   margin-bottom: 20px;
   color: #1fd86f;
+}
+.mgDtls {
+  margin-top: 50px;
+}
+#x {
+  margin-bottom: 20px;
 }
 </style>
