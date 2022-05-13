@@ -86,7 +86,8 @@ export const useQuadrasStore = defineStore('quadras', {
           cantina: false,
           areaAlimentacao: true,
           chuteira: false,
-          bola: true
+          bola: true,
+          estacionamento: false
         }
       ]
 

@@ -1,5 +1,5 @@
 
-    <script setup>
+<script setup>
 import api from "@/api";
 import axios from "axios";
 import { ref } from "vue";
@@ -80,11 +80,11 @@ const submitForm = async () => {
     quadra_tipo_id: 1,
   });
 
-  router.replace("/locais");
+  router.replace("/quadras");
 };
 </script>
 
-    <template>
+<template>
   <div>
     <div class="title">
       Cadastro de Quadra
@@ -92,15 +92,14 @@ const submitForm = async () => {
     </div>
 
     <div class="container">
-      <!-- NOMES --------------------------------------------------------------------------------------------------------------- -->
-
-      <h4 class="name">Dados específicos</h4>
+      <!-- DADOS ESPECÍFICOS --------------------------------------------------------------------------------------------------------------- -->
+      <h4 class="name">Nomenclaturas</h4>
       <hr class="geralPad" />
 
-      <form @submit.prevent="submitForm">
-        <div class="row">
+
+<div class="row">
           <div class="form-group col-md">
-            <label for="nameQuadra">Nome do Local</label>
+            <label for="nameQuadra">Nome da Quadra</label>
             <input
               type="text"
               class="form-control"
@@ -108,8 +107,15 @@ const submitForm = async () => {
               v-model="nome"
             />
           </div>
+        </div>
 
-          <div class="col-md">
+      <h4 class="name">Dados específicos</h4>
+      <hr class="geralPad" />
+
+      <form @submit.prevent="submitForm">
+
+        <div class="row">
+          <div class="form-group col-md">
             <label for="nameQuadra">Largura da Quadra</label>
             <input
               type="text"
@@ -293,6 +299,15 @@ const submitForm = async () => {
               v-model="details.bola"
             />
           </div>
+
+          <div class="col-md-3">Estacionamento Próprio:</div>
+          <div class="form-check col-md-1">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="details.estacionamento"
+            />
+          </div>
         </div>
 
         <div>
@@ -309,7 +324,6 @@ const submitForm = async () => {
     </div>
   </div>
 </template>
-
 
 <style>
 .title {
