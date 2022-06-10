@@ -20,20 +20,29 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="d-block d-sm-none">
             <ul class="navbar-nav">
+              
+              <li class="nav-item">
+                <RouterLink to="/perfilUser" class="nav-link">
+                  Perfil do usuário
+                </RouterLink>
+              </li>
+
+              <li class="nav-item">
+                <RouterLink to="/meusLocais" class="nav-link">
+                  Meus Locais
+                </RouterLink>
+              </li>
+
               <li class="nav-item">
                 <RouterLink to="/quadras" class="nav-link">Quadras</RouterLink>
               </li>
+  
               <li class="nav-item">
-                <RouterLink to="/locais" class="nav-link">
-                  Menu do Usuário
-                </RouterLink>
+                <a href="#" class="nav-link">Sair</a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Configurações</a>
-              </li>
-              <li class="nav-item"><a href="#" class="nav-link">Sair</a></li>
             </ul>
           </div>
+
           <div class="col d-flex justify-content-center">
             <FormPesquisa />
           </div>
@@ -56,12 +65,20 @@
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <RouterLink class="dropdown-item" to="/quadras"
-                  >Quadras</RouterLink
-                >
-                <RouterLink class="dropdown-item" to="/locais"
-                  >Menu do Usuário</RouterLink
-                >
+
+                <RouterLink class="dropdown-item" to="/perfilUser">
+                  Perfil do usuário
+                </RouterLink>
+
+                <RouterLink class="dropdown-item" to="/meusLocais">
+                  Meus locais
+                </RouterLink>
+
+                <RouterLink class="dropdown-item" to="/quadras">
+                  Quadras
+                </RouterLink>
+
+
                 <!-- <a class="dropdown-item" href="#">Configurações</a> -->
                 <a class="dropdown-item" href="#" onclick="exit()">Sair</a>
                 <!-- FUNÇÃO EXIT -->

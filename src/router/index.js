@@ -6,31 +6,55 @@ const routes = [
     name: 'home',
     component: () => import('../views/HomeView.vue')
   },
+  
+  // ------------------------------------------------------------------------------------------------------------------ //
+
+  // OPÇÕES DO MENU -> TOPO DO SITE
+
+  // ------------------------------------------------------------------------------------------------------------------ //
+      // -> PERFIL DO USUÁRIO
+  {
+    path: '/perfilUser',
+    name: 'perfilUser',
+    component: () => import('../views/PerfilDoUsuarioView.vue')
+  },
+      // -> LOCAIS DO USUÁRIO
+  {
+    path: '/meusLocais',
+    name: 'meusLocais',
+    component: () => import('../views/MeusLocaisView.vue')
+  },
+      // -> TODAS AS QUADRAS
   {
     path: '/quadras',
     name: 'quadras',
     component: () => import('../views/QuadrasView.vue')
   },
-  {
-    path: '/locais',
-    name: 'locais',
-    component: () => import('../views/MenuDoUserView.vue')
-  },
+
+  // ------------------------------------------------------------------------------------------------------------------ //
   
-  {
-    path: '/quadras/:id',
-    name: 'quadraDetails',
-    component: () => import('../views/QuadraDetailsView.vue')
-  },
+  // CADASTROS DO SITE
+
+  // ------------------------------------------------------------------------------------------------------------------ //
+      // -> CADASTRO DOS LOCAIS
   {
     path: '/locais/new',
     name: 'locaisCadastro',
     component: () => import('../views/CadastreLocaisView.vue')
   },
+        // -> CADASTRO DAS QUADRAS
   {
     path: '/quadras/new',
     name: 'quadrasCadastro',
     component: () => import('../views/CadastreQuadrasView.vue')
+  },
+
+  // ------------------------------------------------------------------------------------------------------------------ //
+
+  {
+    path: '/quadras/:id',
+    name: 'quadraDetails',
+    component: () => import('../views/QuadraDetailsView.vue')
   },
   
   {
