@@ -30,7 +30,7 @@
 <style>
 body{
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-image: url();
 }
 .areaLogin{
