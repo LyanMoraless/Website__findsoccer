@@ -17,7 +17,9 @@
                     <button class="loginBtn">Entrar</button>
                 </form>
 
-                <p>Ainda não possui conta?<a href="#">Criar conta</a></p>
+                <p>Ainda não possui conta? <Router-Link to="/cdstUser">
+                    Criar conta
+                </Router-Link></p>
 
             </div>
         </div>
@@ -45,7 +47,7 @@ body{
     height: 520px;
     padding: 35px;
     border-radius: 10px;
-    box-shadow: 7px 7px 13px 0px rgb(173, 51, 84);
+    box-shadow: 7px 7px 13px 0px rgb(108, 204, 45);
 }
 .login form{
     display: flex;
@@ -88,7 +90,7 @@ p{
     text-decoration: none;
 }
 p a{
-    margin-left: 5px;
+    margin-left: 1px;
     color: #1FD86F;
 }
 </style>

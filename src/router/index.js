@@ -48,6 +48,12 @@ const routes = [
     name: 'quadrasCadastro',
     component: () => import('../views/CadastreQuadrasView.vue')
   },
+        // -> CADASTRO DE CRIAÇÃO DA CONTA (USUÁRIO)
+  {
+    path: '/cdstUser',
+    name: 'cadastroUser',
+    component: () => import('../views/CadastroUserView.vue')
+  },
 
   // ------------------------------------------------------------------------------------------------------------------ //
 
