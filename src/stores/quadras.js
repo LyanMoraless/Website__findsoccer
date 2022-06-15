@@ -116,7 +116,7 @@ export const useQuadrasStore = defineStore('quadras', {
       this.tiposDeQuadras = res.data;
     },
     async consultarCidades() {
-      const res = await api.get("/locais/cidades");
+      const res = await api.get("/api/v1/localidades/municipios");
       this.cidades = res.data
     },
     consultarQuadrasRecentes() {

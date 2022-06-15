@@ -52,8 +52,8 @@ const cidade = computed({
         {{ tiposDeQuadra.nome }}
       </option>
     </select>
-
-    <select class="form-control mr-sm-2 menus" name="cidade">
+     <!--cidade listado-->
+    <select class="form-control mr-sm-2 w-25 menus" name="cidade">
       <option :value="null">Todos as cidades</option>
       <option 
       v-for="cidade in cidades" 
@@ -96,4 +96,3 @@ const cidade = computed({
     <button class="btn butt my-2 my-sm-0" type="submit">Search</button>
   </form>
 </template>
-
