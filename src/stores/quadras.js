@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-import api from '@/api'
+import api, { ibge } from '@/api'
 
 export const useQuadrasStore = defineStore('quadras', {
   state: () => {
@@ -103,7 +103,9 @@ export const useQuadrasStore = defineStore('quadras', {
       const res = await api.get("/quadras");
       this.quadras = res.data;
     },
-    consultarQuadrasMaisAcessadas() {
+    async consultarQuadrasMaisAcessadas() {
+      const res = await api.get("/quadras");
+      this.quadrasMaisAcessadas = res.data;
     },
     async cadastrarQuadra(quadra) {
       return await api.post("/quadras", quadra);
@@ -116,12 +118,16 @@ export const useQuadrasStore = defineStore('quadras', {
       this.tiposDeQuadras = res.data;
     },
     async consultarCidades() {
-      const res = await api.get("/api/v1/localidades/municipios");
+      const res = await ibge.get("/api/v1/localidades/municipios");
       this.cidades = res.data
     },
-    consultarQuadrasRecentes() {
+    async consultarQuadrasRecentes() {
+      const res = await api.get("/quadras");
+      this.quadrasRecentes = res.data;
     },
-    consultarQuadrasMaisAvaliadas() {
+    async consultarQuadrasMaisAvaliadas() {
+      const res = await api.get("/quadras");
+      this.quadrasMaisAvaliadas = res.data;
     }
   }
 })

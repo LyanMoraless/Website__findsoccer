@@ -22,13 +22,13 @@
             <ul class="navbar-nav">
               
               <li class="nav-item">
-                <RouterLink to="/perfilUser" class="nav-link">
+                <RouterLink to="/profile" class="nav-link">
                   Perfil do usuário
                 </RouterLink>
               </li>
 
               <li class="nav-item">
-                <RouterLink to="/meusLocais" class="nav-link">
+                <RouterLink to="/profile/locais" class="nav-link">
                   Meus Locais
                 </RouterLink>
               </li>
@@ -66,11 +66,11 @@
                 aria-labelledby="navbarDropdownMenuLink"
               >
 
-                <RouterLink class="dropdown-item" to="/perfilUser">
+                <RouterLink class="dropdown-item" to="/profile">
                   Perfil do usuário
                 </RouterLink>
 
-                <RouterLink class="dropdown-item" to="/meusLocais">
+                <RouterLink class="dropdown-item" to="/profile/locais">
                   Meus locais
                 </RouterLink>
 

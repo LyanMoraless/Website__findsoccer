@@ -5,9 +5,24 @@
 <template>
   
     <section>
-    <div class="container">
-      <h1 class="title">Profile</h1>
-    </div>
+        <div class="areaLogin">
+            <div class="login">
+                <div>
+                    <img src="@/assets/img/telaDeLogin.jpg" />
+                </div>
+
+                <form>
+                    <input type="text" name="name" placeholder="Nome de usuário" autofocus>
+                    <input type="password" name="password" placeholder="Digite sua senha" >
+                    <button class="loginBtn">Entrar</button>
+                </form>
+
+                <p>Ainda não possui conta? <Router-Link to="/cdstUser">
+                    Criar conta
+                </Router-Link></p>
+
+            </div>
+        </div>
     </section>
 
 </template>

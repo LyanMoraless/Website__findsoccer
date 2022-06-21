@@ -2,7 +2,7 @@
   <div>
     <Banner />
 
-    <section class="principal" v-if="quadrasMaisAcessadas.length > 0">
+    <section class="principal" v-if="quadrasMaisAcessadas">
       <h2 class="marginTitle">Mais acessadas</h2>
       <hr />
 
@@ -18,7 +18,7 @@
         </div>
       </div>
     </section>
-    <section class="principal">
+    <section class="principal" v-if="quadrasRecentes">
       <h2 class="marginTitle2">
         Visitadas recentemente
         <hr />
@@ -28,7 +28,7 @@
         <div class="row align-items-stretch">
           <div
             class="col-3 d-flex align-items-stretch"
-            v-for="quadra in quadras"
+            v-for="quadra in quadrasRecentes"
             :key="quadra.id"
           >
             <QuadraCard :quadra="quadra" />
@@ -36,7 +36,7 @@
         </div>
       </div>
     </section>
-    <section class="principal">
+    <section class="principal" v-if="quadrasMaisAcessadas">
       <h2 class="marginTitle3">
         Maiores avaliações
         <hr />
@@ -46,7 +46,7 @@
         <div class="row align-items-stretch">
           <div
             class="col-3 d-flex align-items-stretch"
-            v-for="quadra in quadras"
+            v-for="quadra in quadrasMaisAvaliadas"
             :key="quadra.id"
           >
             <QuadraCard :quadra="quadra" />
@@ -68,12 +68,20 @@ const store = useQuadrasStore();
 export default {
   components: { Banner, QuadraCard, Rodape },
   computed: {
-    quadras() {
-      return store.quadras;
+    quadrasRecentes() {
+      return store.quadrasRecentes || [];
     },
     quadrasMaisAcessadas() {
-      return store.quadrasMaisAcessadas;
-    }
+      return store.quadrasMaisAcessadas || [];
+    },
+    quadrasMaisAvaliadas() {
+      return store.quadrasMaisAvaliadas || [];
+    },
+  },
+  mounted() {
+    store.consultarQuadrasMaisAcessadas();
+    store.consultarQuadrasMaisAvaliadas();
+    store.consultarQuadrasRecentes();
   },
 };
 </script>

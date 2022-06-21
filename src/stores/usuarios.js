@@ -7,8 +7,12 @@ export const useUsuariosStore = defineStore('usuarios', {
       usuario: null,
       logado: false,
       locais: [],
-      quadras: []
+      quadras: [],
     }
+  },
+
+  getters: {
+    isLogado: (state) => state.logado,
   },
 
   actions: {
