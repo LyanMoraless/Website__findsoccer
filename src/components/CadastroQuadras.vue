@@ -80,7 +80,7 @@ const submitForm = async () => {
     quadra_tipo_id: 1,
   });
 
-  router.replace("/quadras");
+  router.replace("/profile/locais");
 };
 </script>
 
@@ -103,7 +103,7 @@ const submitForm = async () => {
             <input
               type="text"
               class="form-control"
-              placeholder="Digite o nome do Local"
+              placeholder="Quadra Futsal 1"
               v-model="nome"
             />
           </div>

@@ -1,34 +1,30 @@
 <template>
-  <div>
+  <div class="container quadrasPadding">
     <h2 class="marginTitleQd1">
       Quadras - Bauru/Sp
       <hr />
     </h2>
-
-    <div class="container quadrasPadding">
-      <QuadraLista
-        v-for="quadra in quadrasFiltradas"
-        :key="quadra.id"
-        :quadra="quadra"
-        id="quadrasStyle"
-      />
-      </div>
+    <QuadraLista
+      v-for="quadra in quadrasFiltradas"
+      :key="quadra.id"
+      :quadra="quadra"
+      id="quadrasStyle"
+    />
   </div>
 </template>
 
 <script setup>
 import { storeToRefs } from "pinia";
 import { onMounted } from "vue-demi";
-import QuadraLista from "../components/QuadraLista.vue";
-import { useQuadrasStore } from "../stores/quadras";
+import QuadraLista from "../../components/QuadraLista.vue";
+import { useQuadrasStore } from "../../stores/quadras";
 
 const store = useQuadrasStore();
-const {quadrasFiltradas} = storeToRefs(store);
+const { quadrasFiltradas } = storeToRefs(store);
 
 onMounted(() => {
   store.consultarQuadras();
-})
-
+});
 </script>
 
 <style>

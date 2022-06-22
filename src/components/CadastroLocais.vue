@@ -66,14 +66,14 @@ const submitForm = async () => {
     preco: preco.value,
   });
 
-  console.log(res);
+  // console.log(res);
 
-  await store.cadastrarQuadra({
-    local_id: res.data.id,
-    quadra_tipo_id: 1,
-  });
+  // await store.cadastrarQuadra({
+  //   local_id: res.data.id,
+  //   quadra_tipo_id: 1,
+  // });
 
-  router.replace('/locais');
+  router.replace('/profile/locais');
   
 };
 </script>

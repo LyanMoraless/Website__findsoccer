@@ -1,31 +1,57 @@
 <script setup>
-const props = defineProps(['locais']);
+import { useProfilesStore } from "@/stores/profiles";
+import { storeToRefs } from "pinia";
+
+const props = defineProps(["locais"]);
+const store = useProfilesStore();
+
+const {localSelecionado} = storeToRefs(store);
 
 </script>
 <template>
   <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action">
+    <a
+      href="#"
+      @click="store.selecionarLocal(null)"
+      :class="[
+        'list-group-item',
+        'list-group-item-action',
+        localSelecionado === null ? 'active' : '',
+      ]"
+    >
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">Todos</h5>
       </div>
     </a>
-    <a href="#" class="list-group-item list-group-item-action" v-for="local in props.locais" :key="local.id">
+    <a
+      href="#"
+      @click="store.selecionarLocal(local)"
+      :class="[
+        'list-group-item',
+        'list-group-item-action',
+        localSelecionado != null && localSelecionado.id == local.id
+          ? 'active'
+          : '',
+      ]"
+      v-for="local in props.locais"
+      :key="local.id"
+    >
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{ local.nome }}</h5>
-        <small>3 days ago</small>
       </div>
-      <p class="mb-1">Some placeholder content in a paragraph.</p>
-      <small>And some small print.</small>
     </a>
 
-    <RouterLink class="list-group-item list-group-item-action y" to="/locais/new">
+    <RouterLink
+      class="list-group-item list-group-item-action y"
+      to="/profile/locais/new"
+    >
       Cadastrar novo local
     </RouterLink>
   </div>
 </template>
 
 <style>
-.y{
+.y {
   color: #1fd86f;
 }
 </style>

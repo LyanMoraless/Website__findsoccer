@@ -6,7 +6,7 @@
 
 <script>
 
-import CadastroLocais from "../components/CadastroLocais.vue";
+import CadastroLocais from "../../components/CadastroLocais.vue";
 
 export default {
     components: {CadastroLocais },

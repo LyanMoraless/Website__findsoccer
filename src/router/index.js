@@ -15,12 +15,12 @@ const routes = [
       {
         path: 'quadras',
         name: 'quadras',
-        component: () => import('../views/QuadrasView.vue')
+        component: () => import('../views/quadras/QuadrasView.vue')
       },
       {
         path: 'quadras/:id',
         name: 'quadraDetails',
-        component: () => import('../views/QuadraDetailsView.vue')
+        component: () => import('../views/quadras/QuadraDetailsView.vue')
       },
       {
         path: 'politic',
@@ -45,36 +45,30 @@ const routes = [
       {
         path: '',
         name: 'profile_view',
-        component: () => import('../views/PerfilDoUsuarioView.vue')
+        component: () => import('../views/profiles/PerfilDoUsuarioView.vue')
       },
       {
         path: 'locais',
         name: 'profile_locais',
-        component: () => import('../views/MeusLocaisView.vue')
+        component: () => import('../views/profiles/MeusLocaisView.vue')
       },
-      // ------------------------------------------------------------------------------------------------------------------ //
       // -> CADASTRO DOS LOCAIS
       {
         path: 'locais/new',
         name: 'locaisCadastro',
-        component: () => import('../views/CadastreLocaisView.vue')
+        component: () => import('../views/profiles/CadastreLocaisView.vue')
       },
       // -> CADASTRO DAS QUADRAS
       {
         path: 'quadras/new',
         name: 'quadrasCadastro',
-        component: () => import('../views/CadastreQuadrasView.vue')
+        component: () => import('../views/profiles/CadastreQuadrasView.vue')
       },
       {
         path: 'new',
         name: 'profile_new',
-        component: () => import('../views/PerfilDoUsuarioView.vue')
-      },
-      {
-        path: 'login',
-        name: 'profile_login',
-        component: () => import('../views/LoginView.vue')
-      },
+        component: () => import('../views/profiles/PerfilDoUsuarioView.vue')
+      }
     ]
   },
   {
@@ -84,15 +78,15 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'login_view',
-        component: () => import('../views/LoginView.vue')
+        name: 'login-view',
+        component: () => import('../views/login/LoginView.vue')
       },
       // CADASTROS DO SITE
 
       {
         path: '/register',
         name: 'login-register',
-        component: () => import('../views/CadastroUserView.vue')
+        component: () => import('../views/login/CadastroUserView.vue')
       },
     ]
   }
