@@ -1,62 +1,3 @@
-<template>
-  <div>
-    <Banner />
-
-    <section class="principal" v-if="quadrasMaisAcessadas">
-      <h2 class="marginTitle">Mais acessadas</h2>
-      <hr />
-
-      <div class="container">
-        <div class="row align-items-stretch">
-          <div
-            class="col-3 d-flex align-items-stretch"
-            v-for="quadra in quadrasMaisAcessadas"
-            :key="quadra.id"
-          >
-            <QuadraCard :quadra="quadra" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="principal" v-if="quadrasRecentes">
-      <h2 class="marginTitle2">
-        Visitadas recentemente
-        <hr />
-      </h2>
-
-      <div class="container">
-        <div class="row align-items-stretch">
-          <div
-            class="col-3 d-flex align-items-stretch"
-            v-for="quadra in quadrasRecentes"
-            :key="quadra.id"
-          >
-            <QuadraCard :quadra="quadra" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="principal" v-if="quadrasMaisAcessadas">
-      <h2 class="marginTitle3">
-        Maiores avaliações
-        <hr />
-      </h2>
-
-      <div class="container final">
-        <div class="row align-items-stretch">
-          <div
-            class="col-3 d-flex align-items-stretch"
-            v-for="quadra in quadrasMaisAvaliadas"
-            :key="quadra.id"
-          >
-            <QuadraCard :quadra="quadra" />
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</template>
-
 <script>
 import Banner from "../components/Banner.vue";
 import QuadraCard from "../components/QuadraCard.vue";
@@ -86,25 +27,91 @@ export default {
 };
 </script>
 
+<template>
+  
+  <div>
+
+    <!-- TOPO DA PÁGINA -->
+    
+    <Banner />
+    
+    <!-- HOME -->
+
+    <!-- HOME -> QUADRAS MAIS ACESSADAS  -->
+
+    <!-- ------------------------------------------------------------- -->
+    <div class="container">
+      <section v-if="quadrasMaisAcessadas">
+        <h2 class="marginTitle">Mais acessadas</h2>
+        <hr />
+        <div class="row align-items-stretch">
+          <div
+            class="col-3 d-flex align-items-stretch"
+            v-for="quadra in quadrasMaisAcessadas"
+            :key="quadra.id">
+            <QuadraCard :quadra="quadra" />
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ------------------------------------------------------------- -->
+
+    <!-- HOME -> QUADRAS VISITADAS RECENTEMENTE  -->
+
+    <!-- ------------------------------------------------------------- -->
+    <div class="container">
+      <section v-if="quadrasRecentes">
+        <h2 class="marginTitle">
+          Visitadas recentemente
+          <hr />
+        </h2>
+        <div class="row align-items-stretch">
+          <div
+            class="col-3 d-flex align-items-stretch"
+            v-for="quadra in quadrasRecentes"
+            :key="quadra.id">
+            <QuadraCard :quadra="quadra" />
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ------------------------------------------------------------- -->
+
+    <!-- HOME -> QUADRAS COM MAIORES AVALIAÇÕES -->
+
+    <!-- ------------------------------------------------------------- -->
+    <div class="container">
+    <section class="principal" v-if="quadrasMaisAcessadas">
+      <h2 class="marginTitle">
+        Maiores avaliações
+        <hr />
+      </h2>
+      
+        <div class="row align-items-stretch end">
+          <div
+            class="col-3 d-flex align-items-stretch"
+            v-for="quadra in quadrasMaisAvaliadas"
+            :key="quadra.id"
+          >
+            <QuadraCard :quadra="quadra" />
+          </div>
+        </div>
+    </section>
+    </div>
+    <!-- ------------------------------------------------------------- -->
+  </div>
+</template>
+
 <style>
-.principal {
-  padding: 50px;
-}
 .marginTitle {
-  margin: 60px;
+  margin: 60px 0px 0px 0px;
   font-style: italic;
 }
-.marginTitle2 {
-  margin: 60px;
-  font-style: italic;
-  margin-top: 120px;
-}
-.marginTitle3 {
-  margin: 60px;
-  font-style: italic;
-  margin-top: 120px;
-}
-.final {
+.end {
   margin-bottom: 50px;
+}
+hr{
+  margin-bottom: 50px;
+  background-color: black;
 }
 </style>

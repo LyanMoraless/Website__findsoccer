@@ -1,10 +1,13 @@
 <template>
   <header class="topo">
     <nav class="navbar navbar-expand-lg navbar-dark">
+      
       <div class="container">
+
         <RouterLink class="navbar-brand logo" to="/">
           <img src="@/assets/img/Topo/logo.svg" />
         </RouterLink>
+
         <button
           class="navbar-toggler"
           type="button"

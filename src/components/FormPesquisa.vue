@@ -43,7 +43,7 @@ const cidade = computed({
       name="tipo"
       v-model="tipoDeQuadra"
     >
-    <option :value="null">Todos os tipos</option>
+    <option :value="null" class="m">Todos os tipos</option>
       <option
         v-for="tiposDeQuadra in tiposDeQuadras"
         :key="tiposDeQuadra.id"
@@ -96,3 +96,4 @@ const cidade = computed({
     <button class="btn butt my-2 my-sm-0" type="submit">Search</button>
   </form>
 </template>
+
