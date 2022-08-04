@@ -5,11 +5,11 @@
 <template>
   
     <section>
+
         <div class="areaLogin">
             <div class="login">
-                <div>
-                    <img src="@/assets/img/telaDeLogin.jpg" />
-                </div>
+
+                <h3 class="y">Login</h3>
 
                 <form>
                     <input type="text" name="name" placeholder="Nome de usuário" autofocus>
@@ -17,9 +17,14 @@
                     <button class="loginBtn">Entrar</button>
                 </form>
 
-                <p>Ainda não possui conta? <Router-Link to="/cdstUser">
+                <p class="butesp">Ainda não possui conta? <Router-Link to="/register">
                     Criar conta
                 </Router-Link></p>
+
+                <div class="img">
+                    <img src="@/assets/img/telaDeLogin.jpg" />
+                </div> 
+
 
             </div>
         </div>
@@ -53,6 +58,10 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+.y{
+    font-size: 35px;
+    margin-bottom: 30px;
 }
 .login input{
     margin-top: 15px;
@@ -92,5 +101,9 @@ p{
 p a{
     margin-left: 1px;
     color: #1FD86F;
+}
+.butesp{
+    margin-bottom: 40px;
+    margin-top: -20px;
 }
 </style>
