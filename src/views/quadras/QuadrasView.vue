@@ -1,5 +1,5 @@
 <template>
-  <div class="container quadrasPadding">
+  <div class="container">
     <h2 class="marginTitleQd1">
       Quadras - Bauru/Sp
       <hr />
@@ -30,7 +30,7 @@ onMounted(() => {
 <style>
 .marginTitleQd1 {
   font-style: italic;
-  margin: 80px 150px;
+  margin: 80px 0px 80px 0px;
 }
 .quadrasPadding {
   margin-top: 50px;

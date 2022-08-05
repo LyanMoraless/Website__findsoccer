@@ -29,7 +29,7 @@ export default {
 
 <style>
 .marginTitleQd {
-  margin: 60px;
+  margin: 80px 80px 0px 0px;
   font-style: italic;
   margin-top: 50px;
 }
