@@ -27,11 +27,13 @@ onMounted(() => {
         </div>
 
         <div class="col-md-9">
+      
           <CardQuadraLocais
             v-for="quadra in quadrasFiltradas"
             :quadra="quadra"
             :key="quadra.id"
           />
+          
           <RouterLink
             class="list-group-item list-group-item-action y"
             to="/profile/quadras/new"

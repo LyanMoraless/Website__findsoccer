@@ -7,8 +7,9 @@
     <section>
         <div class="areaLogin">
             <div class="login">
-                <div>
-                    <img src="@/assets/img/telaDeLogin.jpg" />
+                
+                <div class="titleLogs">
+                    <img id="imgDtls" src="../../../public/img/login.png">
                 </div>
 
                 <form>
@@ -17,9 +18,13 @@
                     <button class="loginBtn">Entrar</button>
                 </form>
 
-                <p>Ainda não possui conta? <Router-Link to="/cdstUser">
+                <p>Ainda não possui conta? <Router-Link to="/register">
                     Criar conta
                 </Router-Link></p>
+
+                <div class="image">
+                    <img src="@/assets/img/telaDeLogin.jpg" />
+                </div>
 
             </div>
         </div>
@@ -83,6 +88,15 @@ input::placeholder{
     /* cursor: pointer; */
     border: none;
     height: 60px;
+}
+.titleLogs{
+    font-size: 27px;
+}
+.image{
+    margin-top: 50px;
+}
+#imgDtls{
+    margin-bottom: 20px;
 }
 p{
     font-size: small;

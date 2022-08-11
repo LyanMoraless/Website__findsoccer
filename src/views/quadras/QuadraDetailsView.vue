@@ -1,10 +1,10 @@
 <template>
-  <div class="container quadrasPadding">
+  <div class="container">
     <h2 class="marginTitleQd">
       Detalhes da Quadra
       <hr />
     </h2>
-    <div class="">
+    <div>
       <QuadraDetails />
     </div>
   </div>
@@ -29,12 +29,7 @@ export default {
 
 <style>
 .marginTitleQd {
-  margin: 60px;
+  margin: 50px 0px 50px 0px;
   font-style: italic;
-  margin-top: 50px;
-}
-.quadrasPadding {
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 </style>

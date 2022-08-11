@@ -7,7 +7,7 @@ defineProps(['quadra'])
 
 <template>
   <div class="card mb-3" v-if="quadra">
-    <router-link to="/locais/1">
+    <router-link to="/quadras/1">
       <div class="row g-0">
         <div class="col-md-4">
           <img

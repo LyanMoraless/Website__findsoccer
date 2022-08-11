@@ -30,7 +30,7 @@ onMounted(() => {
 <style>
 .marginTitleQd1 {
   font-style: italic;
-  margin: 80px 150px;
+  margin: 50px 0px 50px 0px;
 }
 .quadrasPadding {
   margin-top: 50px;

@@ -3,8 +3,11 @@
     <Banner />
 
     <section class="principal" v-if="quadrasMaisAcessadas">
-      <h2 class="marginTitle">Mais acessadas</h2>
-      <hr />
+      <div class="container">
+        <h2 class="marginTitle">Mais Acessadas
+        <hr />
+      </h2>
+      </div>
 
       <div class="container">
         <div class="row align-items-stretch">
@@ -19,10 +22,11 @@
       </div>
     </section>
     <section class="principal" v-if="quadrasRecentes">
-      <h2 class="marginTitle2">
-        Visitadas recentemente
+      <div class="container">
+        <h2 class="marginTitle">Visitadas Recentemente
         <hr />
       </h2>
+      </div>
 
       <div class="container">
         <div class="row align-items-stretch">
@@ -37,10 +41,11 @@
       </div>
     </section>
     <section class="principal" v-if="quadrasMaisAcessadas">
-      <h2 class="marginTitle3">
-        Maiores avaliações
+      <div class="container">
+        <h2 class="marginTitle">Maiores Avaliações
         <hr />
       </h2>
+      </div>
 
       <div class="container final">
         <div class="row align-items-stretch">
@@ -91,18 +96,8 @@ export default {
   padding: 50px;
 }
 .marginTitle {
-  margin: 60px;
+  margin: 50px 0px 50px 0px;
   font-style: italic;
-}
-.marginTitle2 {
-  margin: 60px;
-  font-style: italic;
-  margin-top: 120px;
-}
-.marginTitle3 {
-  margin: 60px;
-  font-style: italic;
-  margin-top: 120px;
 }
 .final {
   margin-bottom: 50px;
