@@ -6,7 +6,8 @@
   
     <section>
     <div class="container">
-      <h1 class="title">Profile</h1>
+      <h1 class="marginTitle">Profile</h1>
+      <hr />
     </div>
     </section>
 
@@ -68,6 +69,10 @@ input::placeholder{
     /* cursor: pointer; */
     border: none;
     height: 60px;
+}
+.marginTitle {
+  margin: 50px 0px 50px 0px;
+  font-style: italic;
 }
 p{
     font-size: small;

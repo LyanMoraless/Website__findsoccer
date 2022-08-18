@@ -11,9 +11,9 @@ defineProps(["usuarioCadastro"]);
 const router = useRouter();
 const store = useUsuariosStore();
 
-const username = ref(store.username);
-const email = ref(store.email);
-const senha = ref(store.senha);
+const username = ref();
+const email = ref();
+const senha = ref();
 
 const submitForm = async() => {
     const res = await store.cadastrarUsuario({

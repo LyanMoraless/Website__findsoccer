@@ -18,8 +18,8 @@ onMounted(() => {
 <template>
   <div>
     <div class="container">
-      <h1 class="title">Minhas quadras</h1>
-      <hr style="margin-bottom: 50px" />
+      <h1 class="marginTitle">Minhas quadras</h1>
+      <hr />
 
       <div class="row">
         <div class="col-md-3">
@@ -47,8 +47,8 @@ onMounted(() => {
 </template>
 
 <style>
-.title {
+.marginTitle {
+  margin: 50px 0px 50px 0px;
   font-style: italic;
-  margin-top: 30px;
 }
 </style>
