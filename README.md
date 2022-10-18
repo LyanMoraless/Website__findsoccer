@@ -25,7 +25,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### A fazer
     1. [ ] Topo
        1. [ ] Filtro 
-          1. [ ] Listar cidades e estados - Bryan
+          1. [X] Listar cidades e estados - Bryan
           2. [ ] Componente de data (agendamento) - Lyan
           3. [ ] Componente de horário (agendamento) - Lyan
           4. [ ] Conectar o filtro às quadras 
@@ -70,3 +70,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
              1. [ ] Dentro do detalhe das quadras fazer campo de reserva 
              2. [ ] Cancelar a reserva da quadra
              3. [ ] Efetuar a reserva da quadra (horário disponível)
+
+### Prioridades 
+   1. [] Cadastros 
+      1. [] Locais
+      2. [] Quadras
+      3. [] Usuários
+   2. [] Listas as quadras 
