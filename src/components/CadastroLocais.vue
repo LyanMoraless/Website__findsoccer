@@ -1,15 +1,15 @@
 <script setup>
 import api from "@/api";
+import { useProfilesStore } from "@/stores/profiles";
 import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { useQuadrasStore } from "../stores/quadras";
 
 defineProps(["quadrasCadastro"]);
 
 const router = useRouter();
 
-const store = useQuadrasStore();
+const store = useProfilesStore();
 
 const horarios = ref(store.horarios);
 
