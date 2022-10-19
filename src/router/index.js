@@ -60,7 +60,7 @@ const routes = [
       },
       // -> CADASTRO DAS QUADRAS
       {
-        path: 'quadras/new',
+        path: 'locais/:local_id/quadras/new',
         name: 'quadrasCadastro',
         component: () => import('../views/profiles/CadastreQuadrasView.vue')
       },

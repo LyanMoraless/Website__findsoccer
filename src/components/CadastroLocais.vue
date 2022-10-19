@@ -8,9 +8,7 @@ import { useRouter } from "vue-router";
 defineProps(["quadrasCadastro"]);
 
 const router = useRouter();
-
 const store = useProfilesStore();
-
 const horarios = ref(store.horarios);
 
 const nome = ref();
@@ -48,33 +46,24 @@ const submitForm = async () => {
     descricao: descricao.value,
     img: img.value,
 
-    //CHECAR SE ESSES 3 CAMPOS PODEM OU DEVEM PERTENCER AO CADASTRO DE UM LOCAL
     cel: cel.value,
     fone: fone.value,
     email: email.value,
 
     horarios: horarios.value,
-    endereco: {
-      cep: cep.value,
-      rua: rua.value,
-      compl: compl.value,
-      bairro: bairro.value,
-      estado: estado.value,
-      cidade: cidade.value,
-      numero: numero.value,
-    },
+    cep: cep.value,
+    rua: rua.value,
+    compl: compl.value,
+    bairro: bairro.value,
+    estado: estado.value,
+    cidade: cidade.value,
+    numero: numero.value,
     preco: preco.value,
   });
 
-  // console.log(res);
+  console.log(res);
 
-  // await store.cadastrarQuadra({
-  //   local_id: res.data.id,
-  //   quadra_tipo_id: 1,
-  // });
-
-  router.replace('/profile/locais');
-  
+  router.replace("/profile/locais");
 };
 </script>
 
@@ -84,7 +73,7 @@ const submitForm = async () => {
       Cadastro de Local
       <!-- <img src="../../public/img/Logo 1.jpg" alt=""> -->
     </div>
-    
+
     <div class="container">
       <!-- NOMES --------------------------------------------------------------------------------------------------------------- -->
 
@@ -127,10 +116,13 @@ const submitForm = async () => {
 
           <div class="col">
             <label for="">Imagens</label>
-            <input type="text" class="form-control"  placeholder="Zip" required>
-            <div class="invalid-feedback">
-              Please provide a valid zip.
-            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Zip"
+              required
+            />
+            <div class="invalid-feedback">Please provide a valid zip.</div>
           </div>
         </div>
 

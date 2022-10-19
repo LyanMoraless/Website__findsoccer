@@ -1,4 +1,3 @@
-
 <script setup>
 import { storeToRefs } from "pinia";
 import { onMounted } from "vue-demi";
@@ -8,7 +7,7 @@ import { useProfilesStore } from "@/stores/profiles";
 
 const store = useProfilesStore();
 
-const { locais, quadrasFiltradas } = storeToRefs(store);
+const { locais, quadrasFiltradas, localSelecionado } = storeToRefs(store);
 
 onMounted(() => {
   store.consultarLocais();
@@ -27,16 +26,16 @@ onMounted(() => {
         </div>
 
         <div class="col-md-9">
-      
           <CardQuadraLocais
             v-for="quadra in quadrasFiltradas"
             :quadra="quadra"
             :key="quadra.id"
           />
-          
+
           <RouterLink
             class="list-group-item list-group-item-action y"
-            to="/profile/quadras/new"
+            :to="`/profile/locais/${localSelecionado.id}/quadras/new`"
+            v-if="localSelecionado != null"
           >
             Cadastrar nova quadra
           </RouterLink>

@@ -22,6 +22,8 @@ const submitForm = async() => {
         senha: senha.value
     });
 
+    await store.cadastrarUsuario({})
+
     // router.replace("/")
 }
 

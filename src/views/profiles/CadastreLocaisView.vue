@@ -1,17 +1,9 @@
-<template>
-    <div>
-        <CadastroLocais />
-    </div>
-</template>
-
-<script>
-
-import CadastroLocais from "../../components/CadastroLocais.vue";
-
-export default {
-    components: {CadastroLocais },
-}
+<script setup>
+    import CadastroLocais from "../../components/CadastroLocais.vue";
 </script>
 
-<style>
-</style>
+<template>
+  <div>
+    <CadastroLocais />
+  </div>
+</template>

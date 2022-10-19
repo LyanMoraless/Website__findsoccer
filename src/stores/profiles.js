@@ -10,6 +10,7 @@ export const useProfilesStore = defineStore('profiles', {
       quadras: [],
       tiposDeQuadras: [],
       cidades: [],
+      recursos: [],
 
       //CADASTRO QUADRAS
 
@@ -105,8 +106,12 @@ export const useProfilesStore = defineStore('profiles', {
       return await api.post("/locais", local);
     },
     async consultarTiposDeQuadras() {
-      const res = await api.get("/quadras-tipos");
+      const res = await api.get("/quadra-tipos");
       this.tiposDeQuadras = res.data;
+    },
+    async consultarRecursos() {
+      const res = await api.get("/recursos");
+      this.recursos = res.data;
     },
     async consultarCidades() {
       const res = await ibge.get("/api/v1/localidades/municipios");
