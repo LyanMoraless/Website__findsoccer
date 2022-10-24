@@ -104,7 +104,7 @@ const submitForm = async () => {
         </div>
 
         <div class="row">
-          <div class="form-group col-md-10">
+          <div class="form-group col">
             <label for="">Descrição</label>
             <textarea
               class="form-control"
@@ -114,16 +114,6 @@ const submitForm = async () => {
             ></textarea>
           </div>
 
-          <div class="col">
-            <label for="">Imagens</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Zip"
-              required
-            />
-            <div class="invalid-feedback">Please provide a valid zip.</div>
-          </div>
         </div>
 
         <!-- CREDENCIAIS --------------------------------------------------------------------------------------------------------------- -->

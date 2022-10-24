@@ -88,7 +88,7 @@ export const useProfilesStore = defineStore('profiles', {
     }
   },
   getters: {
-    quadrasFiltradas: (state) => state.quadras.filter((quadra) => (state.localSelecionado == null || quadra.local_id == state.localSelecionado.id))
+    quadrasFiltradas: (state) => state.quadras.filter((quadra) => (state.localSelecionado == null || quadra.localId == state.localSelecionado.id))
   },
   actions: {
     async consultarQuadras() {

@@ -21,7 +21,7 @@ const nome = ref();
 const largura = ref();
 const comprimento = ref();
 const descricao = ref();
-const quadraTipo = ref();
+const quadraTipoId = ref();
 const preco = ref();
 
 const submitForm = async () => {
@@ -33,7 +33,7 @@ const submitForm = async () => {
     largura: largura.value,
     comprimento: comprimento.value,
     descricao: descricao.value,
-    quadraTipo: quadraTipo.value,
+    quadraTipoId: quadraTipoId.value,
     preco: preco.value,
   });
 
@@ -60,8 +60,8 @@ const submitForm = async () => {
         </div>
         <div class="col-md form-group">
           <label for="nameQuadra">Nome da Quadra</label>
-          <select class="custom-select" v-model="quadraTipo">
-            <option v-for="tipo in tiposDeQuadras" :key="tipo.id">
+          <select class="custom-select" v-model="quadraTipoId">
+            <option v-for="tipo in tiposDeQuadras" :key="tipo.id" :value="tipo.id" >
               {{ tipo.nome }}
             </option>
           </select>

@@ -1,5 +1,5 @@
 <template>
-  <header class="topo">
+  <header class="topo sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <RouterLink class="navbar-brand logo" to="/">

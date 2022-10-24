@@ -12,7 +12,7 @@ if (!isLogado) {
 }
 </script>
 <template>
-  <div>
+  <div class="page">
     <Topo />
     <main class="conteudo">
       <div class="container">

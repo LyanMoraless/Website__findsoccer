@@ -3,6 +3,7 @@
         <img :src="quadra.foto.url" class="card-img-top mostAcessed" v-if="quadra.foto" />
         <div class="card-body">
             <h5 class="card-title direitos2">{{ quadra.nome }}</h5>
+            <p class="card-subtitle">{{ quadra.quadra_tipo.nome }}</p>
             <p class="card-text">{{ quadra.descricao }}</p>
         </div>
 
@@ -34,6 +35,3 @@ export default {
     }
 }
 </script>
-
-<style>
-</style>

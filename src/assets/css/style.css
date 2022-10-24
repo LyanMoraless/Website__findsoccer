@@ -60,3 +60,23 @@ footer{
     font-size: 20px;
 }
 
+
+
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template: 
+        "topo" auto
+        "conteudo" 1fr
+        "rodape" auto;
+}
+
+.page > .topo {
+  grid-area: topo;
+}
+.page > .conteudo {
+  grid-area: conteudo;
+}
+.page > .rodape {
+  grid-area: rodape;
+}

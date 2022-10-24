@@ -23,10 +23,6 @@
   </footer>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style>
 .images {
   height: 40px;

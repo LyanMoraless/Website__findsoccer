@@ -4,7 +4,7 @@ import Topo from '@/components/Topo.vue';
 import Rodape from '@/components/Rodape.vue';
 </script>
 <template>
-  <div>
+  <div class="page">
     <Topo />
 
     <main class="conteudo">
