@@ -14,7 +14,6 @@ const horarios = ref(store.horarios);
 const nome = ref();
 const username = ref();
 const descricao = ref();
-const img = ref();
 
 const cel = ref();
 const fone = ref();
@@ -44,7 +43,6 @@ const submitForm = async () => {
     nome: nome.value,
     username: username.value,
     descricao: descricao.value,
-    img: img.value,
 
     cel: cel.value,
     fone: fone.value,
