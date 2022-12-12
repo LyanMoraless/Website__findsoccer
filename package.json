@@ -14,8 +14,10 @@
     "pinia": "^2.0.13",
     "popper.js": "^1.16.1",
     "vue": "^3.2.13",
+    "vue-demi": "^0.13.11",
     "vue-router": "^4.0.3",
-    "vue-star-rating": "2.1.0"
+    "vue-star-rating": "2.1.0",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",

@@ -2,39 +2,78 @@
   <section>
     <div class="container">
       <h1 class="marginTitle">Profile</h1>
-      <hr />
+      <hr class="hr" />
     </div>
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
           <div class="card-body">
-            <div class="row">
-              <h3 class="card-title text-centerpl-3 pr-2">Lyan Morales</h3>
-              <button class="btn btn-success" type="submit">Alterar</button>
-            </div>
+            <div class="row marginTitle2">
+              <h3 class="pr-2">Lyan Morales</h3>
+              <button class="btn btn-success btn-sm btn-danger" type="submit">Alterar</button>
+            </div> 
 
             <form>
-              <div>
-                <div class="form-group pt-2">
+              <div class="row">
+                <div class="form-group col-sm-10">
                   <input
                     type="email"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Email"
+                    value="drlyanmorales@gmail.com"
                   />
                 </div>
-                <button class="btn btn-success" type="submit">Alterar</button>
+                <div class="col-sm-2">
+                  <button class="btn btn-danger" type="submit">Alterar</button>
+                </div>
               </div>
-              <div class="form-group pt-2">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="exampleInputPassword1"
-                  placeholder="Senha"
-                />
+              <div class="row">
+                <div class="form-group col-sm-10">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Password"
+                    value="123456787654321"
+                  />
+                </div>
+                <div class="col-sm-2">
+                  <button class="btn btn-danger" type="submit">Alterar</button>
+                </div>
               </div>
-              <button class="btn btn-success" type="submit">Alterar</button>
+              <div class="row">
+                <div class="form-group col-sm-10">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="CPF"
+                    value="390.079.978.40"
+                  />
+                </div>
+                <div class="col-sm-2">
+                  <button class="btn btn-danger" type="submit">Alterar</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-sm-10">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="RG"
+                    value="52.996.616-5"
+                  />
+                </div>
+                <div class="col-sm-2">
+                  <button class="btn btn-danger" type="submit">Alterar</button>
+                </div>
+              </div>
             </form>
           </div>
         </div>
@@ -69,134 +108,71 @@
         </div>
       </div>
       <!--Visitadas-->
-      <h3 class="card-title pt-3 pb-3">Visitadas Recentemente</h3>
+      <section class="principal" v-if="quadrasMaisAcessadas">
       <div class="container">
-        <div class="row">
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://s.calendarr.com/upload/datas/di/an/dia-nacional-do-futebol_c.jpg?auto_optimize=low&width=640"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://s.calendarr.com/upload/datas/di/an/dia-nacional-do-futebol_c.jpg?auto_optimize=low&width=640"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://s.calendarr.com/upload/datas/di/an/dia-nacional-do-futebol_c.jpg?auto_optimize=low&width=640"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://s.calendarr.com/upload/datas/di/an/dia-nacional-do-futebol_c.jpg?auto_optimize=low&width=640"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://s.calendarr.com/upload/datas/di/an/dia-nacional-do-futebol_c.jpg?auto_optimize=low&width=640"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://s.calendarr.com/upload/datas/di/an/dia-nacional-do-futebol_c.jpg?auto_optimize=low&width=640"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://s.calendarr.com/upload/datas/di/an/dia-nacional-do-futebol_c.jpg?auto_optimize=low&width=640"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://s.calendarr.com/upload/datas/di/an/dia-nacional-do-futebol_c.jpg?auto_optimize=low&width=640"
-              class="card-img-top"
-              alt="..."
-            />
+        <h2 class="marginTitle">Mais Acessadas
+        <hr class="hr2" />
+      </h2>
+      </div>
+
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div
+            class="col-3 d-flex align-items-stretch"
+            v-for="quadra in quadrasMaisAcessadas"
+            :key="quadra.id"
+          >
+            <QuadraCard :quadra="quadra" />
           </div>
         </div>
       </div>
+    </section>
 
       <!--Historico de Busca-->
 
-      <h3 class="card-title pt-3 pb-4">Historico de Busca</h3>
+      <section v-if="quadrasMaisAcessadas">
       <div class="container">
-        <div class="row">
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://altipisos.com.br/wp-content/uploads/2021/04/site-1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://altipisos.com.br/wp-content/uploads/2021/04/site-1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://altipisos.com.br/wp-content/uploads/2021/04/site-1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://altipisos.com.br/wp-content/uploads/2021/04/site-1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://altipisos.com.br/wp-content/uploads/2021/04/site-1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://altipisos.com.br/wp-content/uploads/2021/04/site-1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://altipisos.com.br/wp-content/uploads/2021/04/site-1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div class="pr-3 pb-3" style="width: 17rem">
-            <img
-              src="https://altipisos.com.br/wp-content/uploads/2021/04/site-1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
+        <h2 class="marginTitle">Histórico de Busca
+        <hr class="hr2" />
+      </h2>
+      </div>
+
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div
+            class="col-3 d-flex align-items-stretch"
+            v-for="quadra in quadrasMaisAcessadas"
+            :key="quadra.id"
+          >
+            <QuadraCard :quadra="quadra" />
           </div>
         </div>
       </div>
+    </section>
     </div>
   </section>
 </template>
+
+<script>
+
+import QuadraCard from "../../components/QuadraCard.vue";
+import { useQuadrasStore } from "../../stores/quadras";
+
+const store = useQuadrasStore();
+
+export default {
+  components: { QuadraCard },
+  computed: {
+    quadrasMaisAcessadas() {
+      return store.quadrasMaisAcessadas || [];
+    },
+  },
+  mounted() {
+    store.consultarQuadrasMaisAcessadas();
+  },
+};
+
+</script>
 
 <style>
 body {
@@ -256,7 +232,7 @@ input::placeholder {
   height: 60px;
 }
 .marginTitle {
-  margin: 50px 0px 50px 0px;
+  margin: 50px 0px 0px 0px;
   font-style: italic;
 }
 p {
@@ -267,5 +243,15 @@ p {
 p a {
   margin-left: 1px;
   color: #1fd86f;
+}
+.hr {
+  border-color: black;
+  margin-bottom: 50px;
+}
+.marginTitle2 {
+  margin-bottom: 20px;
+}
+.hr2 {
+  border-color: #a9a9a9;
 }
 </style>
